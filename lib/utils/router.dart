@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/ui/projects/projects_page.dart';
 import 'package:portfolio/ui/start/start_page.dart';
 import 'package:portfolio/utils/statics/routes.dart';
 
@@ -6,6 +7,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case StartViewRoute:
       return _getPageRoute(routeName: settings.name, viewToShow: StartPage());
+    case ProjcetsViewRoute:
+      return _getPageRoute(
+          routeName: settings.name, viewToShow: ProjectsPage());
     default:
       return MaterialPageRoute(
           builder: (_) => Scaffold(

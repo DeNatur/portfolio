@@ -1,41 +1,111 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/statics/colors.dart';
+import 'package:portfolio/utils/widgets/crossplatform_svg.dart';
 import 'package:portfolio/utils/widgets/web_extensions.dart';
 
 class NavBar extends StatelessWidget {
   final int index;
-
-  const NavBar({Key key, this.index}) : super(key: key);
+  final String text;
+  final Function onPressRight;
+  final Function onPressLeft;
+  const NavBar(
+      {Key key,
+      @required this.index,
+      @required this.text,
+      this.onPressRight,
+      this.onPressLeft})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Stack(
         children: [
-          CustomPaint(
-            size: Size(600.0, 100.0),
-            painter: NavBarPainter(color_navbar),
+          Hero(
+            tag: "line",
+            child: CustomPaint(
+              size: Size(600.0, 100.0),
+              painter: NavBarPainter(color_navbar),
+            ),
           ),
-          CustomPaint(
-            size: Size(600.0, 100.0),
-            painter: IndicatorPainter(color_ultra_light_blue, index),
+          Hero(
+            tag: "indicator",
+            child: CustomPaint(
+              size: Size(600.0, 100.0),
+              painter: IndicatorPainter(color_ultra_light_blue, index),
+            ),
           ),
+          index > 0
+              ? Container(
+                  width: 600,
+                  height: 100,
+                  padding: EdgeInsets.only(right: 250, top: 40),
+                  alignment: Alignment.center,
+                  child: IconButton(
+                    icon: CrossPlatformSvg.asset(
+                      "assets/images/icon_left.png",
+                    ),
+                    iconSize: 32,
+                    onPressed: onPressLeft,
+                  ).showCursorOnHover,
+                )
+              : Container(
+                  width: 600,
+                  height: 100,
+                  padding: EdgeInsets.only(right: 250, top: 40),
+                  alignment: Alignment.center,
+                  child: IconButton(
+                    icon: CrossPlatformSvg.asset(
+                      "assets/images/icon_left.png",
+                      color: Colors.grey.withOpacity(0.2),
+                    ),
+                    iconSize: 32,
+                    onPressed: () {},
+                  ).showCursorOnHover),
+          index < 4
+              ? Container(
+                  width: 600,
+                  height: 100,
+                  padding: EdgeInsets.only(left: 250, top: 40),
+                  alignment: Alignment.center,
+                  child: IconButton(
+                    icon: CrossPlatformSvg.asset(
+                      "assets/images/icon_right.png",
+                    ),
+                    iconSize: 32,
+                    onPressed: onPressRight,
+                  ).showCursorOnHover,
+                )
+              : Container(
+                  width: 600,
+                  height: 100,
+                  padding: EdgeInsets.only(left: 250, top: 40),
+                  alignment: Alignment.center,
+                  child: IconButton(
+                    icon: CrossPlatformSvg.asset(
+                      "assets/images/icon_right.png",
+                      color: Colors.grey.withOpacity(0.2),
+                    ),
+                    iconSize: 32,
+                    onPressed: () {},
+                  ).showCursorOnHover),
           Container(
             width: 600,
             height: 100,
-            padding: EdgeInsets.only(right: 250, top: 40),
+            padding: EdgeInsets.only(top: 30),
             alignment: Alignment.center,
-            child: IconButton(
-              icon: ImageIcon(
-                AssetImage(
-                  "assets/images/icon_left.png",
-                ),
-                size: 32,
-                color: color_ultra_light_blue,
-              ),
+            child: MaterialButton(
               onPressed: () {},
-            ).showCursorOnHover,
-          )
+              child: Text(
+                text,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 24,
+                    color: color_light_blue,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
         ],
       ),
     );

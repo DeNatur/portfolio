@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/services/service_locator.dart';
+import 'package:portfolio/services/service_navigation.dart';
+import 'package:portfolio/utils/router.dart';
 
 import 'ui/start/start_page.dart';
 
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
             Theme.of(context).textTheme,
           ),
         ),
+        navigatorKey: locator<NavigationService>().navigationKey,
+        onGenerateRoute: generateRoute,
         home: StartPage());
   }
 }

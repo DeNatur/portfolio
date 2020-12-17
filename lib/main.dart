@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/services/service_locator.dart';
-import 'package:portfolio/services/service_navigation.dart';
-import 'package:portfolio/ui/start/start_page.dart';
+
+import 'ui/start/start_page.dart';
 
 void main() {
   setupLocator();
@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
             Theme.of(context).textTheme,
           ),
         ),
-        navigatorKey: locator<NavigationService>().navigationKey,
         home: StartPage());
   }
 }

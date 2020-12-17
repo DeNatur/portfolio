@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/statics/colors.dart';
+import 'package:portfolio/utils/widgets/web_extensions.dart';
 
 class NavBar extends StatelessWidget {
   final int index;
@@ -22,13 +23,18 @@ class NavBar extends StatelessWidget {
           Container(
             width: 600,
             height: 100,
+            padding: EdgeInsets.only(right: 250, top: 40),
             alignment: Alignment.center,
             child: IconButton(
               icon: ImageIcon(
-                AssetImage("assets/images/icon_left.png"),
+                AssetImage(
+                  "assets/images/icon_left.png",
+                ),
+                size: 32,
+                color: color_ultra_light_blue,
               ),
               onPressed: () {},
-            ),
+            ).showCursorOnHover,
           )
         ],
       ),

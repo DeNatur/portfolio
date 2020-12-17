@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:portfolio/buisness_logic/view_models/start_viewmodel.dart';
 import 'package:portfolio/services/service_locator.dart';
-import 'package:portfolio/utils/statics/colors.dart';
 import 'package:portfolio/utils/widgets/navbar.dart';
 import 'package:portfolio/utils/widgets/radial_bg.dart';
 import 'package:provider/provider.dart';

@@ -1,26 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:portfolio/buisness_logic/view_models/start_viewmodel.dart';
-import 'package:portfolio/services/service_locator.dart';
 import 'package:portfolio/utils/statics/colors.dart';
-import 'package:portfolio/utils/widgets/navbar.dart';
-import 'package:portfolio/utils/widgets/radial_bg.dart';
-import 'package:provider/provider.dart';
 
-class StartPage extends StatelessWidget {
+class NavBar extends StatelessWidget {
+  final int index;
+
+  const NavBar({Key key, this.index}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<StartViewModel>(
-      create: (context) => locator<StartViewModel>(),
-      child: Scaffold(
-        body: Stack(
-          children: [
-            RadialBg(),
-            NavBar(
-              index: 0,
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Stack(
+        children: [
+          CustomPaint(
+            size: Size(600.0, 100.0),
+            painter: NavBarPainter(color_navbar),
+          ),
+          CustomPaint(
+            size: Size(600.0, 100.0),
+            painter: IndicatorPainter(color_ultra_light_blue, index),
+          ),
+          Container(
+            width: 600,
+            height: 100,
+            alignment: Alignment.center,
+            child: IconButton(
+              icon: ImageIcon(
+                AssetImage("assets/images/icon_left.png"),
+              ),
+              onPressed: () {},
             ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

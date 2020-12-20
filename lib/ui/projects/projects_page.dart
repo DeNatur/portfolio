@@ -31,7 +31,7 @@ class ProjectsPage extends StatelessWidget {
               },
               child: Align(
                 alignment: Alignment.bottomCenter,
-                child: CrossPlatformSvg.asset("assets/images/city_lower.png",
+                child: Image.asset("assets/images/city_lower.png",
                     width: double.infinity,
                     alignment: Alignment.bottomCenter,
                     fit: BoxFit.fitWidth),
@@ -50,7 +50,7 @@ class ProjectsPage extends StatelessWidget {
               },
               child: Align(
                 alignment: Alignment.bottomCenter,
-                child: CrossPlatformSvg.asset("assets/images/city_upper.png",
+                child: Image.asset("assets/images/city_upper.png",
                     width: double.infinity,
                     alignment: Alignment.bottomCenter,
                     fit: BoxFit.fitWidth),

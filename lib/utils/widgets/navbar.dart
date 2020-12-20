@@ -42,8 +42,9 @@ class NavBar extends StatelessWidget {
                   padding: EdgeInsets.only(right: 250, top: 40),
                   alignment: Alignment.center,
                   child: IconButton(
-                    icon: CrossPlatformSvg.asset(
-                      "assets/images/icon_left.png",
+                    icon: ImageIcon(
+                      AssetImage("assets/images/icon_left.png"),
+                      color: color_ultra_light_blue,
                     ),
                     iconSize: 32,
                     onPressed: onPressLeft,
@@ -55,9 +56,9 @@ class NavBar extends StatelessWidget {
                   padding: EdgeInsets.only(right: 250, top: 40),
                   alignment: Alignment.center,
                   child: IconButton(
-                    icon: CrossPlatformSvg.asset(
-                      "assets/images/icon_left.png",
-                      color: Colors.grey.withOpacity(0.2),
+                    icon: ImageIcon(
+                      AssetImage("assets/images/icon_left.png"),
+                      color: color_ultra_light_blue,
                     ),
                     iconSize: 32,
                     onPressed: () {},
@@ -69,8 +70,9 @@ class NavBar extends StatelessWidget {
                   padding: EdgeInsets.only(left: 250, top: 40),
                   alignment: Alignment.center,
                   child: IconButton(
-                    icon: CrossPlatformSvg.asset(
-                      "assets/images/icon_right.png",
+                    icon: ImageIcon(
+                      AssetImage("assets/images/icon_right.png"),
+                      color: color_ultra_light_blue,
                     ),
                     iconSize: 32,
                     onPressed: onPressRight,
@@ -82,9 +84,9 @@ class NavBar extends StatelessWidget {
                   padding: EdgeInsets.only(left: 250, top: 40),
                   alignment: Alignment.center,
                   child: IconButton(
-                    icon: CrossPlatformSvg.asset(
-                      "assets/images/icon_right.png",
-                      color: Colors.grey.withOpacity(0.2),
+                    icon: ImageIcon(
+                      AssetImage("assets/images/icon_right.png"),
+                      color: color_ultra_light_blue,
                     ),
                     iconSize: 32,
                     onPressed: () {},

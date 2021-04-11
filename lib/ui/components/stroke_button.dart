@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:portfolio/utils/statics/colors.dart';
 
+import '../../utils/statics/colors.dart';
+
 class StrokeButton extends StatelessWidget {
   final Function onPressed;
   final String text;
@@ -12,7 +14,7 @@ class StrokeButton extends StatelessWidget {
       {Key key,
       @required this.onPressed,
       @required this.text,
-      this.color = color_ultra_light_blue,
+      this.color = PortfolioColors.ultraLightBlue,
       this.margin = EdgeInsets.zero})
       : super(key: key);
   @override
@@ -28,7 +30,7 @@ class StrokeButton extends StatelessWidget {
             style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: color_ultra_light_blue),
+                color: PortfolioColors.ultraLightBlue),
           ),
         ),
         onPressed: () => onPressed,

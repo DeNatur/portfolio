@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-const color_radial_bg_start = const Color(0xff303E51);
-const color_radial_bg_end = const Color(0xff202833);
-const color_navbar = const Color(0xff252F34);
-const color_ultra_light_blue = const Color(0xff59D4CD);
-const color_light_blue = const Color(0xff9BC9E2);
+class PortfolioColors {
+  static const radialBgStart = const Color(0xff303E51);
+  static const radialBgEnd = const Color(0xff202833);
+  static const navbar = const Color(0xff252F34);
+  static const ultraLightBlue = const Color(0xff59D4CD);
+  static const lightBlue = const Color(0xff9BC9E2);
+  static const white = const Color(0xffffffff);
+}

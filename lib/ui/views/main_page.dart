@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portfolio/ui/views/top_bar.dart';
 import 'package:portfolio/utils/widgets/screen_type_util.dart';
 
 class MainPage extends StatelessWidget {
@@ -8,10 +8,13 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenSizeUtil.setAppropiateScreenType(context);
     return Scaffold(
-      body: Container(
-        color: Colors.red,
-        width: 50.w,
-        height: 50.h,
+      body: Stack(
+        children: [
+          Container(
+            width: double.infinity,
+          ),
+          TopBar(),
+        ],
       ),
     );
   }

@@ -24,6 +24,7 @@ dependencies:
   responsive_builder: ^0.4.1
   flutter_hooks: ^0.16.0-nullsafety.0
   hooks_riverpod: ^0.14.0+1
+  websafe_svg: ^2.0.0
   lottie: ^1.0.1
 dev_dependencies:
   flutter_test:
@@ -34,3 +35,18 @@ flutter:
     - assets/images/
     - assets/animations/
   uses-material-design: true
+fonts:
+    - family: RobotoCondensed
+      fonts:
+        - asset: fonts/RobotoCondensed-Bold.ttf
+          weight: 700
+        - asset: fonts/RobotoCondensed-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: fonts/RobotoCondensed-Light.ttf
+          weight: 300
+        - asset: fonts/RobotoCondensed-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: fonts/RobotoCondensed-Regular.ttf
+          weight: 400

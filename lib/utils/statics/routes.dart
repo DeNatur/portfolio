@@ -1,2 +1,1 @@
-const String StartViewRoute = "StartPage";
-const String ProjcetsViewRoute = "ProjectsPage";
+const String MainViewRoute = "MainPage";

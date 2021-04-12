@@ -2,12 +2,14 @@ import 'package:flutter/widgets.dart';
 import 'package:portfolio/ui/components/top_row.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class TopBarDesktop extends StatelessWidget {
+class TopBaTablet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 56.h, right: 100.w),
-      alignment: Alignment.topRight,
+      margin: EdgeInsets.only(
+        top: 56.h,
+      ),
+      alignment: Alignment.topCenter,
       child: TopRow(),
     );
   }

@@ -12,6 +12,7 @@ import 'buisness_logic/providers.dart';
 import 'utils/statics/colors.dart';
 
 void main() {
+  Paint.enableDithering = true;
   runApp(ProviderScope(child: MainApp()));
 }
 
@@ -30,11 +31,9 @@ class MainApp extends HookWidget {
         debugShowCheckedModeBanner: false,
         title: 'Szymon Stasik Portfolio',
         theme: ThemeData(
+          fontFamily: "RobotoCondensed",
           backgroundColor: PortfolioColors.radialBgStart,
           scaffoldBackgroundColor: PortfolioColors.radialBgStart,
-          textTheme: GoogleFonts.robotoCondensedTextTheme(
-            Theme.of(context).textTheme,
-          ),
         ),
         onGenerateRoute: generateRoute,
         navigatorKey: useProvider(navigationProvider).navigationKey,

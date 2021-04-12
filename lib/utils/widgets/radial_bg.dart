@@ -14,6 +14,7 @@ class RadialBg extends StatelessWidget {
       decoration: BoxDecoration(
           gradient: RadialGradient(radius: 1.0, colors: [
         PortfolioColors.radialBgStart,
+        PortfolioColors.radialBgStart,
         PortfolioColors.radialBgEnd
       ])),
     );

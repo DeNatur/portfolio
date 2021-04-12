@@ -13,7 +13,8 @@ class MainViewModel extends ViewModel {
   PageController pageController = PageController();
   void changePage(PortfolioPage page) {
     currentPage = page;
-    pageController.jumpToPage(page.index);
+    pageController.animateToPage(page.index,
+        duration: Duration(milliseconds: 400), curve: Curves.easeInOutSine);
     notifyListeners();
   }
 

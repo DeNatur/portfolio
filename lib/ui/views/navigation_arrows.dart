@@ -51,13 +51,14 @@ class NavigationArrows extends HookWidget {
         textSize = 12.sp;
         break;
       default:
-        size = 81.h;
+        size = 100.h;
         textSize = 18.sp;
         break;
     }
     return Center(
       child: Row(
         children: [
+          SizedBox(width: 20.w),
           leftText == ""
               ? Container()
               : ArrowAnim(
@@ -77,6 +78,7 @@ class NavigationArrows extends HookWidget {
                   text: rightText,
                   reverse: false,
                 ),
+          SizedBox(width: 20.w),
         ],
       ),
     );

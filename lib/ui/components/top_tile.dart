@@ -34,7 +34,7 @@ class TopTile extends StatelessWidget {
               Text(
                 text,
                 style: TextStyle(
-                    fontSize: 24.sp,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                     color: PortfolioColors.white),
               ),
@@ -43,7 +43,7 @@ class TopTile extends StatelessWidget {
               ),
               current
                   ? Container(
-                      width: 30.w,
+                      width: 24.w,
                       height: 4.h,
                       decoration: BoxDecoration(
                           color: PortfolioColors.ultraLightBlue,

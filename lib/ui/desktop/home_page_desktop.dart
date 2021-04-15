@@ -49,8 +49,9 @@ class HomePageDesktop extends StatelessWidget {
           PlayAnimation(
             tween: Tween<Offset>(begin: Offset(0, -250.h), end: Offset.zero),
             curve: Curves.easeInOutSine,
-            builder: (context, child, value) =>
-                Transform.translate(offset: value, child: child),
+            builder: (context, child, Offset value) => Opacity(
+                opacity: 1 - (value.dy / -250.h),
+                child: Transform.translate(offset: value, child: child)),
             child: Container(
                 margin: EdgeInsets.only(left: 100.w, top: 186.h),
                 width: 700.w,
@@ -83,8 +84,9 @@ class HomePageDesktop extends StatelessWidget {
           PlayAnimation(
             tween: Tween<Offset>(begin: Offset(0, 250.h), end: Offset.zero),
             curve: Curves.easeInOutSine,
-            builder: (context, child, value) =>
-                Transform.translate(offset: value, child: child),
+            builder: (context, child, Offset value) => Opacity(
+                opacity: 1 - (value.dy / 250.h),
+                child: Transform.translate(offset: value, child: child)),
             child: Container(
               alignment: Alignment.bottomLeft,
               margin: EdgeInsets.only(bottom: 130.h, left: 105.w),

@@ -6,6 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import 'package:portfolio/utils/statics/asset_names.dart';
 import 'package:portfolio/utils/statics/colors.dart';
+import 'package:simple_animations/simple_animations.dart';
+import 'package:supercharged/supercharged.dart';
 
 class HomePageDesktop extends StatelessWidget {
   final TextStyle _whiteBigTextStyle = TextStyle(
@@ -44,66 +46,79 @@ class HomePageDesktop extends StatelessWidget {
                 width: 601.w,
                 height: 601.h,
               )),
-          Positioned(
-              left: 100.w,
-              top: 186.h,
-              width: 700.w,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  RichText(
-                    text: new TextSpan(
-                        text: "My name is ",
-                        style: _whiteBigTextStyle,
-                        children: [
-                          TextSpan(
-                              text: "Szymon Stasik", style: _blueBigTextStyle),
-                          TextSpan(
-                            text: ",\nborn in Poland I develop\n",
-                            style: _whiteBigTextStyle,
-                          ),
-                          TextSpan(
-                              text: "Mobile Applications",
-                              style: _blueBigTextStyle)
-                        ]),
-                  ),
-                  SizedBox(
-                    height: 48.h,
-                  ),
-                ],
-              )),
-          Positioned(
-            bottom: 130.h,
-            left: 105.w,
-            child: RichText(
-              textAlign: TextAlign.start,
-              text: new TextSpan(
-                  text: "To do more than just ",
-                  style: _whiteSmallTextStyle,
+          PlayAnimation(
+            tween: Tween<Offset>(begin: Offset(0, -250.h), end: Offset.zero),
+            curve: Curves.easeInOutSine,
+            builder: (context, child, value) =>
+                Transform.translate(offset: value, child: child),
+            child: Container(
+                margin: EdgeInsets.only(left: 100.w, top: 186.h),
+                width: 700.w,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextSpan(text: "code.\n", style: _blueSmallTextStyle),
-                    TextSpan(
-                      text: "Besides writing ",
-                      style: _whiteSmallTextStyle,
+                    RichText(
+                      text: new TextSpan(
+                          text: "My name is ",
+                          style: _whiteBigTextStyle,
+                          children: [
+                            TextSpan(
+                                text: "Szymon Stasik",
+                                style: _blueBigTextStyle),
+                            TextSpan(
+                              text: ",\nborn in Poland I develop\n",
+                              style: _whiteBigTextStyle,
+                            ),
+                            TextSpan(
+                                text: "Mobile Applications",
+                                style: _blueBigTextStyle)
+                          ]),
                     ),
-                    TextSpan(text: "clear code ", style: _blueSmallTextStyle),
-                    TextSpan(
-                      text: "and\n",
-                      style: _whiteSmallTextStyle,
+                    SizedBox(
+                      height: 48.h,
                     ),
-                    TextSpan(text: "tests ", style: _blueSmallTextStyle),
-                    TextSpan(
-                      text: "I stive to implement\n",
-                      style: _whiteSmallTextStyle,
-                    ),
-                    TextSpan(
-                        text: "beautiful designs ", style: _blueSmallTextStyle),
-                    TextSpan(
-                      text: "and ",
-                      style: _whiteSmallTextStyle,
-                    ),
-                    TextSpan(text: "animations", style: _blueSmallTextStyle),
-                  ]),
+                  ],
+                )),
+          ),
+          PlayAnimation(
+            tween: Tween<Offset>(begin: Offset(0, 250.h), end: Offset.zero),
+            curve: Curves.easeInOutSine,
+            builder: (context, child, value) =>
+                Transform.translate(offset: value, child: child),
+            child: Container(
+              alignment: Alignment.bottomLeft,
+              margin: EdgeInsets.only(bottom: 130.h, left: 105.w),
+              child: RichText(
+                textAlign: TextAlign.start,
+                text: new TextSpan(
+                    text: "To do more than just ",
+                    style: _whiteSmallTextStyle,
+                    children: [
+                      TextSpan(text: "code.\n", style: _blueSmallTextStyle),
+                      TextSpan(
+                        text: "Besides writing ",
+                        style: _whiteSmallTextStyle,
+                      ),
+                      TextSpan(text: "clear code ", style: _blueSmallTextStyle),
+                      TextSpan(
+                        text: "and\n",
+                        style: _whiteSmallTextStyle,
+                      ),
+                      TextSpan(text: "tests ", style: _blueSmallTextStyle),
+                      TextSpan(
+                        text: "I stive to implement\n",
+                        style: _whiteSmallTextStyle,
+                      ),
+                      TextSpan(
+                          text: "beautiful designs ",
+                          style: _blueSmallTextStyle),
+                      TextSpan(
+                        text: "and ",
+                        style: _whiteSmallTextStyle,
+                      ),
+                      TextSpan(text: "animations", style: _blueSmallTextStyle),
+                    ]),
+              ),
             ),
           )
         ],

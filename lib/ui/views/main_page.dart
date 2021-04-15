@@ -22,6 +22,7 @@ class MainPage extends HookWidget {
       body: Stack(
         children: [
           PageView(
+            physics: NeverScrollableScrollPhysics(),
             controller: useProvider(mainViewModel).pageController,
             children: [
               HomePage(),

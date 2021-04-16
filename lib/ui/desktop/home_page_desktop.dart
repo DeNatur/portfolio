@@ -55,7 +55,7 @@ class HomePageDesktop extends StatelessWidget {
                 opacity: 1 - (value.dy / -250.h),
                 child: Transform.translate(offset: value, child: child)),
             child: Container(
-                margin: EdgeInsets.only(left: 100.w, top: 186.h),
+                margin: EdgeInsets.only(left: 100.w, top: 161.h),
                 width: 700.w,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

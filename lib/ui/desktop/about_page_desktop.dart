@@ -28,6 +28,11 @@ class AboutPageDesktop extends StatelessWidget {
               children: [
                 _Background(),
                 _UpperWave(),
+                Positioned(
+                    child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [Text(loc.about.about_me)],
+                ))
               ],
             ),
           )

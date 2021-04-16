@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/buisness_logic/providers.dart';
 import 'package:portfolio/buisness_logic/view_models/main_viewmodel.dart';
+import 'package:portfolio/generated/locale_base.dart';
 import 'package:portfolio/utils/statics/colors.dart';
 
 class MainPageDrawer extends HookWidget {
@@ -16,6 +17,8 @@ class MainPageDrawer extends HookWidget {
     final double paddingTop = MediaQuery.of(context).padding.top;
     MainViewModel model = useProvider<MainViewModel>(mainViewModel);
     PortfolioPage currentPage = model.currentPage;
+    final loc = Localizations.of<LocaleBase>(context, LocaleBase);
+
     return Container(
       width: ScreenUtil().screenWidth * 0.6,
       child: Stack(
@@ -50,7 +53,7 @@ class MainPageDrawer extends HookWidget {
                 ),
                 _DrawerTile(
                   onPressed: () => model.changePage(PortfolioPage.Home),
-                  text: "Home",
+                  text: loc.main.home,
                   currentPage: currentPage == PortfolioPage.Home,
                 ),
                 SizedBox(
@@ -58,7 +61,7 @@ class MainPageDrawer extends HookWidget {
                 ),
                 _DrawerTile(
                   onPressed: () => model.changePage(PortfolioPage.About),
-                  text: "About",
+                  text: loc.main.about,
                   currentPage: currentPage == PortfolioPage.About,
                 ),
                 SizedBox(
@@ -66,7 +69,7 @@ class MainPageDrawer extends HookWidget {
                 ),
                 _DrawerTile(
                   onPressed: () => model.changePage(PortfolioPage.Experience),
-                  text: "Experience",
+                  text: loc.main.experience,
                   currentPage: currentPage == PortfolioPage.Experience,
                 ),
                 SizedBox(
@@ -74,7 +77,7 @@ class MainPageDrawer extends HookWidget {
                 ),
                 _DrawerTile(
                   onPressed: () => model.changePage(PortfolioPage.Contact),
-                  text: "Contact",
+                  text: loc.main.contact,
                   currentPage: currentPage == PortfolioPage.Contact,
                 ),
               ],

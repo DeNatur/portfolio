@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/ui/views/main_page.dart';
+import 'package:portfolio/utils/locale_delegate.dart';
 import 'package:portfolio/utils/router.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 import 'buisness_logic/providers.dart';
 import 'utils/statics/colors.dart';
 
 void main() {
-  Paint.enableDithering = true;
+  Paint.enableDithering = true; //Helps getting smooth gradient transition
   runApp(ProviderScope(child: MainApp()));
 }
 
@@ -35,6 +34,15 @@ class MainApp extends HookWidget {
           backgroundColor: PortfolioColors.radialBgStart,
           scaffoldBackgroundColor: PortfolioColors.radialBgStart,
         ),
+        localizationsDelegates: [
+          const LocDelegate(),
+          GlobalMaterialLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          const Locale('en', ''), // English, no country code
+        ],
         onGenerateRoute: generateRoute,
         navigatorKey: useProvider(navigationProvider).navigationKey,
         home: MainPage());

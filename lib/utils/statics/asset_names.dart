@@ -4,3 +4,4 @@ const String ASSET_ANIMATIONS_ARROW = "assets/animations/arrow.json";
 const String ASSET_HOME = "assets/images/home.png";
 const String ASSET_BACKGROUND = "assets/images/background.png";
 const String ASSET_WAVE = "assets/images/wave.png";
+const String ASSET_UPPER_WAVE = "assets/images/upper_wave.png";

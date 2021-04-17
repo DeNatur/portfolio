@@ -40,14 +40,6 @@ class IconContactRow extends StatelessWidget {
             onPressed: () => html.window
                 .open("https://www.linkedin.com/in/szymonstasik", "linkedIn"),
           ),
-          SizedBox(
-            width: 36.w,
-          ),
-          IconImageButton(
-            image: AssetImage("assets/images/email.png"),
-            onPressed: () => html.window
-                .open("https://www.linkedin.com/in/szymonstasik", "linkedIn"),
-          ),
         ],
       ),
     );

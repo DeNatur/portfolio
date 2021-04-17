@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:portfolio/utils/widgets/web_extensions.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class IconImageButton extends StatelessWidget {
   final Function onPressed;
@@ -15,6 +16,7 @@ class IconImageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
+      iconSize: 24.w,
       icon: ImageIcon(
         image,
         color: color,

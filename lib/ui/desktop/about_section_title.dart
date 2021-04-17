@@ -2,6 +2,54 @@ import 'package:flutter/cupertino.dart';
 import 'package:portfolio/utils/statics/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+class AboutSectionTitleMobile extends StatelessWidget {
+  final String sectionTitle;
+  final String section;
+
+  const AboutSectionTitleMobile(
+      {Key key, @required this.sectionTitle, @required this.section})
+      : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Text(
+            sectionTitle,
+            style: TextStyle(
+              color: PortfolioColors.ultraLightBlue,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(
+            height: 16.h,
+          ),
+          Text(
+            section,
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16.sp,
+                color: PortfolioColors.white),
+          ),
+          SizedBox(
+            height: 16.h,
+          ),
+          Container(
+            width: 32.w,
+            height: 4.h,
+            decoration: BoxDecoration(
+                color: PortfolioColors.ultraLightBlue,
+                borderRadius: BorderRadius.circular(16)),
+          )
+        ],
+      ),
+    );
+  }
+}
+
 class AboutSectionTitleDesktop extends StatelessWidget {
   final String sectionTitle;
   final String section;

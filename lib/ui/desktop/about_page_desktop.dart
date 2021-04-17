@@ -8,6 +8,7 @@ import 'package:portfolio/ui/components/blue_waves.dart';
 import 'package:portfolio/ui/components/icon_row.dart';
 import 'package:portfolio/ui/components/stroke_button.dart';
 import 'package:portfolio/ui/desktop/about_section_title.dart';
+import 'package:portfolio/ui/desktop/technical_skill.dart';
 import 'package:portfolio/utils/statics/asset_names.dart';
 import 'package:portfolio/utils/statics/colors.dart';
 import 'package:simple_animations/simple_animations.dart';
@@ -41,8 +42,10 @@ class AboutPageDesktop extends StatelessWidget {
             ),
           ),
           Container(
+            key: technicalSkillsKey,
             width: 1440.w,
-            height: 1085.h,
+            height: 750.h,
+            alignment: Alignment.center,
             color: PortfolioColors.radialBgEnd,
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -52,12 +55,34 @@ class AboutPageDesktop extends StatelessWidget {
                     section: loc.about.technical_skills),
                 SizedBox(height: 136.h),
                 Container(
-                  key: technicalSkillsKey,
-                  child: Row(),
+                  margin: EdgeInsets.symmetric(horizontal: 101.w),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TechnicalSkill(
+                          image: AssetImage(ASSET_FIREBASE),
+                          title: loc.about.backend,
+                          desc: loc.about.backend_desc),
+                      TechnicalSkill(
+                          image: AssetImage(ASSET_FLUTTER),
+                          title: loc.about.flutter,
+                          desc: loc.about.flutter_desc),
+                      TechnicalSkill(
+                          image: AssetImage(ASSET_ANRDOID),
+                          title: loc.about.android,
+                          desc: loc.about.android_desc),
+                      TechnicalSkill(
+                          image: AssetImage(ASSET_FIGMA),
+                          title: loc.about.other,
+                          desc: loc.about.other_desc),
+                    ],
+                  ),
                 )
               ],
             ),
           ),
+          _BottomWave(),
         ],
       ),
     );
@@ -122,7 +147,7 @@ class _PersonalDesc extends StatelessWidget {
     return Positioned(
       top: 261.h,
       right: 101.w,
-      width: 541.w,
+      width: 460.w,
       child: PlayAnimation(
         tween: Tween(begin: 0.0, end: 1.0),
         curve: Curves.easeInOutSine,
@@ -231,6 +256,31 @@ class _Background extends StatelessWidget {
         PortfolioColors.radialBgStart,
         PortfolioColors.radialBgEnd,
       ])),
+    );
+  }
+}
+
+class _BottomWave extends StatelessWidget {
+  const _BottomWave({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Transform(
+        alignment: Alignment.center,
+        transform: Matrix4.rotationZ(math.pi),
+        child: PlayAnimation(
+          tween: Tween<Offset>(begin: Offset(0, 250.h), end: Offset.zero),
+          curve: Curves.easeInOutSine,
+          builder: (context, child, Offset value) => Opacity(
+              opacity: 1 - (value.dy / 250.h),
+              child: Transform.translate(offset: value, child: child)),
+          child: BlueWaves(),
+        ),
+      ),
     );
   }
 }

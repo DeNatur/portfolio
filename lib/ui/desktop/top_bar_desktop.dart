@@ -6,7 +6,7 @@ class TopBarDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 56.h, right: 100.w),
+      margin: EdgeInsets.only(top: 56.h, right: 68.w),
       alignment: Alignment.topRight,
       child: TopRow(),
     );

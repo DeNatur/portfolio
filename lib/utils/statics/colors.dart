@@ -10,4 +10,6 @@ class PortfolioColors {
   static const wave1 = const Color(0xff4164AE);
   static const wave2 = const Color(0xff223253);
   static const wave3 = const Color(0xff1C2944);
+  static const technicalSkill = const Color(0xff1B283C);
+  static const technicalSkillDesc = const Color(0xff367198);
 }

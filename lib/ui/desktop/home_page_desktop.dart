@@ -8,7 +8,6 @@ import 'package:portfolio/generated/locale_base.dart';
 import 'package:portfolio/utils/statics/asset_names.dart';
 import 'package:portfolio/utils/statics/colors.dart';
 import 'package:simple_animations/simple_animations.dart';
-import 'package:supercharged/supercharged.dart';
 
 class HomePageDesktop extends StatelessWidget {
   final TextStyle _whiteBigTextStyle = TextStyle(

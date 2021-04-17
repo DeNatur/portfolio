@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:portfolio/utils/statics/colors.dart';
@@ -7,6 +9,7 @@ import '../../utils/statics/colors.dart';
 class StrokeButton extends StatelessWidget {
   final Function onPressed;
   final String text;
+  final double textSize;
   final Color color;
   final EdgeInsetsGeometry margin;
 
@@ -15,7 +18,8 @@ class StrokeButton extends StatelessWidget {
       @required this.onPressed,
       @required this.text,
       this.color = PortfolioColors.ultraLightBlue,
-      this.margin = EdgeInsets.zero})
+      this.margin = EdgeInsets.zero,
+      this.textSize = 16})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -31,12 +35,12 @@ class StrokeButton extends StatelessWidget {
               child: Text(
                 text,
                 style: TextStyle(
-                    fontSize: 16.sp,
+                    fontSize: textSize,
                     fontWeight: FontWeight.bold,
                     color: PortfolioColors.ultraLightBlue),
               ),
             ),
-            onPressed: () => onPressed,
+            onPressed: onPressed,
           ),
         ],
       ),

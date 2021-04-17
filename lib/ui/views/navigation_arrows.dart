@@ -43,7 +43,7 @@ class NavigationArrows extends HookWidget {
     var deviceType = getDeviceType(MediaQuery.of(context).size);
     switch (deviceType) {
       case DeviceScreenType.tablet:
-        size = 81.h;
+        size = 100.h;
         textSize = 18.sp;
         break;
       case DeviceScreenType.mobile:

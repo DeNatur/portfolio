@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class PortfolioColors {
   static const radialBgStart = const Color(0xff293F60);
   static const radialBgEnd = const Color(0xff202D45);
+  static const linearBgStart = const Color(0xff225272);
+  static const linearBgEnd = const Color(0xff202D45);
   static const navbar = const Color(0xff252F34);
   static const ultraLightBlue = const Color(0xff59D4CD);
   static const lightBlue = const Color(0xff9BC9E2);

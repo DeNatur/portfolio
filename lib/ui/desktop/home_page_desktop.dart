@@ -7,6 +7,7 @@ import 'package:lottie/lottie.dart';
 import 'package:portfolio/generated/locale_base.dart';
 import 'package:portfolio/utils/statics/asset_names.dart';
 import 'package:portfolio/utils/statics/colors.dart';
+import 'package:portfolio/utils/widgets/centered_view.dart';
 import 'package:simple_animations/simple_animations.dart';
 
 class HomePageDesktop extends StatelessWidget {
@@ -53,34 +54,36 @@ class HomePageDesktop extends StatelessWidget {
             builder: (context, child, Offset value) => Opacity(
                 opacity: 1 - (value.dy / -250.h),
                 child: Transform.translate(offset: value, child: child)),
-            child: Container(
-                margin: EdgeInsets.only(left: 100.w, top: 161.h),
-                width: 700.w,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    RichText(
-                      text: new TextSpan(
-                          text: loc.home.my_name_is,
-                          style: _whiteBigTextStyle,
-                          children: [
-                            TextSpan(
-                                text: loc.home.szymon_stasik,
-                                style: _blueBigTextStyle),
-                            TextSpan(
-                              text: loc.home.born_in_poland,
-                              style: _whiteBigTextStyle,
-                            ),
-                            TextSpan(
-                                text: loc.home.mobile_applications,
-                                style: _blueBigTextStyle)
-                          ]),
-                    ),
-                    SizedBox(
-                      height: 48.h,
-                    ),
-                  ],
-                )),
+            child: CenteredView(
+              child: Container(
+                  alignment: Alignment.bottomLeft,
+                  margin: EdgeInsets.only(top: 100.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      RichText(
+                        text: new TextSpan(
+                            text: loc.home.my_name_is,
+                            style: _whiteBigTextStyle,
+                            children: [
+                              TextSpan(
+                                  text: loc.home.szymon_stasik,
+                                  style: _blueBigTextStyle),
+                              TextSpan(
+                                text: loc.home.born_in_poland,
+                                style: _whiteBigTextStyle,
+                              ),
+                              TextSpan(
+                                  text: loc.home.mobile_applications,
+                                  style: _blueBigTextStyle)
+                            ]),
+                      ),
+                      SizedBox(
+                        height: 48.h,
+                      ),
+                    ],
+                  )),
+            ),
           ),
           PlayAnimation(
             tween: Tween<Offset>(begin: Offset(0, 250.h), end: Offset.zero),
@@ -88,45 +91,49 @@ class HomePageDesktop extends StatelessWidget {
             builder: (context, child, Offset value) => Opacity(
                 opacity: 1 - (value.dy / 250.h),
                 child: Transform.translate(offset: value, child: child)),
-            child: Container(
-              alignment: Alignment.bottomLeft,
-              margin: EdgeInsets.only(bottom: 130.h, left: 105.w),
-              child: RichText(
-                textAlign: TextAlign.start,
-                text: new TextSpan(
-                    text: loc.home.to_be_more_than,
-                    style: _whiteSmallTextStyle,
-                    children: [
-                      TextSpan(
-                          text: loc.home.coder, style: _blueSmallTextStyle),
-                      TextSpan(
-                        text: loc.home.besides_writing,
-                        style: _whiteSmallTextStyle,
-                      ),
-                      TextSpan(
-                          text: loc.home.clear_code,
-                          style: _blueSmallTextStyle),
-                      TextSpan(
-                        text: loc.home.and,
-                        style: _whiteSmallTextStyle,
-                      ),
-                      TextSpan(
-                          text: loc.home.tests, style: _blueSmallTextStyle),
-                      TextSpan(
-                        text: loc.home.i_strive,
-                        style: _whiteSmallTextStyle,
-                      ),
-                      TextSpan(
-                          text: loc.home.beautiful_designs,
-                          style: _blueSmallTextStyle),
-                      TextSpan(
-                        text: loc.home.and,
-                        style: _whiteSmallTextStyle,
-                      ),
-                      TextSpan(
-                          text: loc.home.animations,
-                          style: _blueSmallTextStyle),
-                    ]),
+            child: CenteredView(
+              child: Container(
+                alignment: Alignment.bottomLeft,
+                margin: EdgeInsets.only(
+                  bottom: 130.h,
+                ),
+                child: RichText(
+                  textAlign: TextAlign.start,
+                  text: new TextSpan(
+                      text: loc.home.to_be_more_than,
+                      style: _whiteSmallTextStyle,
+                      children: [
+                        TextSpan(
+                            text: loc.home.coder, style: _blueSmallTextStyle),
+                        TextSpan(
+                          text: loc.home.besides_writing,
+                          style: _whiteSmallTextStyle,
+                        ),
+                        TextSpan(
+                            text: loc.home.clear_code,
+                            style: _blueSmallTextStyle),
+                        TextSpan(
+                          text: loc.home.and,
+                          style: _whiteSmallTextStyle,
+                        ),
+                        TextSpan(
+                            text: loc.home.tests, style: _blueSmallTextStyle),
+                        TextSpan(
+                          text: loc.home.i_strive,
+                          style: _whiteSmallTextStyle,
+                        ),
+                        TextSpan(
+                            text: loc.home.beautiful_designs,
+                            style: _blueSmallTextStyle),
+                        TextSpan(
+                          text: loc.home.and,
+                          style: _whiteSmallTextStyle,
+                        ),
+                        TextSpan(
+                            text: loc.home.animations,
+                            style: _blueSmallTextStyle),
+                      ]),
+                ),
               ),
             ),
           )

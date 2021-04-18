@@ -70,43 +70,46 @@ class TechnicalSkill extends StatelessWidget {
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          height: 133.w,
-          width: 133.w,
-          alignment: Alignment.center,
-          padding: EdgeInsets.all(25.w),
-          child: Image(
+    return Container(
+      width: 148.w,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            height: 133.w,
+            width: 133.w,
             alignment: Alignment.center,
-            image: image,
+            padding: EdgeInsets.all(25.w),
+            child: Image(
+              alignment: Alignment.center,
+              image: image,
+            ),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle, color: PortfolioColors.technicalSkill),
           ),
-          decoration: BoxDecoration(
-              shape: BoxShape.circle, color: PortfolioColors.technicalSkill),
-        ),
-        SizedBox(
-          height: 17.h,
-        ),
-        Text(
-          title,
-          style: TextStyle(
-              color: PortfolioColors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 24.sp),
-        ),
-        SizedBox(
-          height: 19.h,
-        ),
-        Text(
-          desc,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              color: PortfolioColors.technicalSkillDesc,
-              fontWeight: FontWeight.bold,
-              fontSize: 16.sp),
-        ),
-      ],
+          SizedBox(
+            height: 17.h,
+          ),
+          Text(
+            title,
+            style: TextStyle(
+                color: PortfolioColors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 24.sp),
+          ),
+          SizedBox(
+            height: 19.h,
+          ),
+          Text(
+            desc,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: PortfolioColors.technicalSkillDesc,
+                fontWeight: FontWeight.bold,
+                fontSize: 16.sp),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -39,7 +39,7 @@ class BlueWaves extends StatelessWidget {
           [PortfolioColors.wave1, PortfolioColors.wave2.withOpacity(0.0)],
           [PortfolioColors.wave1, PortfolioColors.wave3.withOpacity(0.0)],
         ],
-        durations: [35000, 19440, 10800],
+        durations: [16000, 10440, 12800],
         heightPercentages: [0.3, 0.4, 0.5],
         blur: MaskFilter.blur(BlurStyle.solid, 10),
         gradientBegin: Alignment.topCenter,

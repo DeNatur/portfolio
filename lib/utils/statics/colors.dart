@@ -14,4 +14,6 @@ class PortfolioColors {
   static const wave3 = const Color(0xff1C2944);
   static const technicalSkill = const Color(0xff1B283C);
   static const technicalSkillDesc = const Color(0xff367198);
+  static const android = const Color(0xff3DDC84);
+  static const flutter = const Color(0xff2E5F7A);
 }

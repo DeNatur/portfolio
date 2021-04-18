@@ -67,5 +67,32 @@
     "programmer_skills": "programmer skills ",
     "under": "under Tech Mentor\nfrom Google",
     "see_my_project": "See my projects"
-  }
+  },
+  "experience": {
+    "experience": "Experience",
+    "aider": "Aider",
+    "aider_desc": "Mobile application \nconnecting volunteers with people in need",
+    "findair": "FindAir",
+    "findair_desc": "Asthma insights from patient to doctor in seconds",
+    "findair_research": "FindAir Research",
+    "findair_research_desc": "Remote research made accurate and simple",
+    "about": "About",
+    "aider1": "Aider is an application designed to help people who need it most. Thanks to it, a person who is not able to leave the house can receive items and food necessary for life. The whole app is 100% free. ",
+    "aider2": "Application has more than 300 volunteers!",
+    "aider3": "After starting the application, the user has two modes to choose from – a volunteer or a person who needs help (elderly, disabled or quarantined).\n\nUsers are verified by phone number.\n\nA person in need of assistance is required to provide their home address in order to e.g. provide purchases by a volunteer.",
+    "aider_android": "Java\nMVVM",
+    "aider_firebase": "Firebase\nCloud Functions\nCrashlytics\nPush Notifications",
+    "aider_goole": "Google Maps Api",
+    "bmi_diary": "BMI Diary",
+    "bmi_diary_about": "The application takes all the factors into account and calculates the ideal level of weight for you and keeps track of your progress towards your goal!",
+    "bmi_diary_2": "Implementation of Neumorphic design in Flutter",
+    "findair1": "First as an Intern then as a Android Developer I have been working\nat “FindAir” on mantaining and adding new features to\n“FindAir Asthma Diary app”",
+    "findair2": "Using data from sensor, FindAir App predicts and warns\nabout possible threats to ensure maximum patient\nsafety.",
+    "findair_sdk": "FindAir SDK and Research App",
+    "findair_r1": " As an Android Developer I have been working at “FindAir”\nat FindAir SDK for bluetooth connection to smart bluetooth device and at\ncreating “FindAir Research App”",
+    "findair_r2": "Research App receives information from FindAir ONE\nsensor and sends it directly to your database. The whole\nprocess is instant and completely seamless for the\npatient to ensure realistic results.",
+    "sanity": "FindAir & Sanity\ncooperation app",
+    "sanity1": " As an Android Developer at “FindAir I have been working\nin Flutter at Mobile app implementing Bluetooth\ntechnology into Sanity’s medical devices"
+  },
+  "contact": {}
 }

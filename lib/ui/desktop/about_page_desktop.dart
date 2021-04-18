@@ -49,8 +49,15 @@ class AboutPageDesktop extends StatelessWidget {
               children: [
                 _Background(),
                 _UpperWave(),
-                _PersonalInfo(loc: loc),
-                _PersonalDesc(loc: loc),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 100.w),
+                  child: Stack(
+                    children: [
+                      _PersonalInfo(loc: loc),
+                      _PersonalDesc(loc: loc),
+                    ],
+                  ),
+                ),
                 _ScrollIndicator(
                   technicalSkillsKey: technicalSkillsKey,
                   marginBottom: 250.h,

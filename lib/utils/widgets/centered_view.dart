@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CenteredView extends StatelessWidget {
   final Widget child;
@@ -7,10 +8,10 @@ class CenteredView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 70.0, vertical: 60),
+      padding: EdgeInsets.symmetric(horizontal: 70.w, vertical: 60.h),
       alignment: Alignment.topCenter,
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 1200),
+        constraints: BoxConstraints(maxWidth: 1200.w),
         child: child,
       ),
     );

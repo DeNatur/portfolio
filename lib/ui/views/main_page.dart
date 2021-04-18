@@ -7,13 +7,13 @@ import 'package:portfolio/buisness_logic/providers.dart';
 import 'package:portfolio/ui/components/drawer.dart';
 import 'package:portfolio/ui/views/about_page.dart';
 import 'package:portfolio/ui/views/contact_page.dart';
-import 'package:portfolio/ui/views/experiance_page.dart';
 import 'package:portfolio/ui/views/home_page.dart';
 import 'package:portfolio/ui/views/top_bar.dart';
 import 'package:portfolio/utils/statics/asset_names.dart';
 import 'package:portfolio/utils/statics/colors.dart';
 import 'package:portfolio/utils/widgets/screen_type_util.dart';
 
+import 'experience_page.dart';
 import 'navigation_arrows.dart';
 
 class MainPage extends HookWidget {

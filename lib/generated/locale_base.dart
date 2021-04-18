@@ -23,11 +23,17 @@ class LocaleBase {
   Localehome get home => _home;
   Localeabout _about;
   Localeabout get about => _about;
+  Localeexperience _experience;
+  Localeexperience get experience => _experience;
+  Localecontact _contact;
+  Localecontact get contact => _contact;
 
   void initAll() {
     _main = Localemain(Map<String, String>.from(_data['main']));
     _home = Localehome(Map<String, String>.from(_data['home']));
     _about = Localeabout(Map<String, String>.from(_data['about']));
+    _experience = Localeexperience(Map<String, String>.from(_data['experience']));
+    _contact = Localecontact(Map<String, String>.from(_data['contact']));
   }
 }
 
@@ -122,5 +128,50 @@ class Localeabout {
   String get programmer_skills => _data["programmer_skills"];
   String get under => _data["under"];
   String get see_my_project => _data["see_my_project"];
+}
+
+class Localeexperience {
+  final Map<String, String> _data;
+  Localeexperience(this._data);
+
+  String getByKey(String key) {
+    return _data[key];
+  }
+
+  String get experience => _data["experience"];
+  String get aider => _data["aider"];
+  String get aider_desc => _data["aider_desc"];
+  String get findair => _data["findair"];
+  String get findair_desc => _data["findair_desc"];
+  String get findair_research => _data["findair_research"];
+  String get findair_research_desc => _data["findair_research_desc"];
+  String get about => _data["about"];
+  String get aider1 => _data["aider1"];
+  String get aider2 => _data["aider2"];
+  String get aider3 => _data["aider3"];
+  String get aider_android => _data["aider_android"];
+  String get aider_firebase => _data["aider_firebase"];
+  String get aider_goole => _data["aider_goole"];
+  String get bmi_diary => _data["bmi_diary"];
+  String get bmi_diary_about => _data["bmi_diary_about"];
+  String get bmi_diary_2 => _data["bmi_diary_2"];
+  String get findair1 => _data["findair1"];
+  String get findair2 => _data["findair2"];
+  String get findair_sdk => _data["findair_sdk"];
+  String get findair_r1 => _data["findair_r1"];
+  String get findair_r2 => _data["findair_r2"];
+  String get sanity => _data["sanity"];
+  String get sanity1 => _data["sanity1"];
+}
+
+class Localecontact {
+  final Map<String, String> _data;
+  Localecontact(this._data);
+
+  String getByKey(String key) {
+    return _data[key];
+  }
+
+  
 }
 

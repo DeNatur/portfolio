@@ -30,7 +30,7 @@ class StrokeButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           MaterialButton(
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
             child: Center(
               child: Text(
                 text,

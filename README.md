@@ -1,16 +1,23 @@
-# portfolio
+# Portfolio WORK IN PROGRESS
 
-A new Flutter project.
+Portfolio website made in Flutter to showcase my skills
 
-## Getting Started
+You can see current progress of buiding website here: https://szymon-stasik.web.app/
 
-This project is a starting point for a Flutter application.
+# Downsides of using flutter for building websites
 
-A few resources to get you started if this is your first Flutter project:
+Even though flutter web being in stable branch it is still not production ready.
+Especially on Firefox scrolling on desktop has still low performence,
+images take long to load and whole site needs 3-10 seconds on first boot to load
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+# TODO
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ - Implement contact page,
+ 
+ - Cache Lottie animation and images at loading screen,
+ 
+ - Implement mobile experience page,
+ 
+ - Improve responsivness of experience page,
+ 
+ - Add more detailed description of projects

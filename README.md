@@ -6,8 +6,8 @@ You can see current progress of buiding website here: https://szymon-stasik.web.
 
 # Downsides of using flutter for building websites
 
-Even though flutter web being in stable branch it is still not production ready.
-Especially on Firefox scrolling on desktop has still low performence,
+Even though flutter web was moved to in stable branch in 2.0 version it is still not production ready!
+Especially on Firefox scrolling on desktop has still low performance,
 images take long to load and whole site needs 3-10 seconds on first boot to load
 
 # TODO
@@ -16,8 +16,10 @@ images take long to load and whole site needs 3-10 seconds on first boot to load
  
  - Cache Lottie animation and images at loading screen,
  
- - Implement mobile experience page,
+ - Implement mobile Experience page,
  
- - Improve responsivness of experience page,
+ - Rebuild cards on Experience Page
+ 
+ - Improve responsivness of Experience page,
  
  - Add more detailed description of projects

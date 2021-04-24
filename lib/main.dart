@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/ui/views/main_page.dart';
+import 'package:portfolio/ui/views/splash_page.dart';
 import 'package:portfolio/utils/locale_delegate.dart';
 import 'package:portfolio/utils/router.dart';
 
@@ -45,6 +46,6 @@ class MainApp extends HookWidget {
         ],
         onGenerateRoute: generateRoute,
         navigatorKey: useProvider(navigationProvider).navigationKey,
-        home: MainPage());
+        home: SplashPage());
   }
 }

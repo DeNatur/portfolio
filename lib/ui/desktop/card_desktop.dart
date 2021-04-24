@@ -33,18 +33,18 @@ class CardPorftolioDesktop extends StatelessWidget {
               children: [
                 Container(
                   height: 12.h,
-                  width: 96.w,
+                  width: 96.h,
                   color: color1,
                 ),
                 Container(
                   height: 12.h,
-                  width: 96.w,
+                  width: 96.h,
                   color: color2,
                 ),
               ],
             ),
             Container(
-              width: 210.w,
+              width: 210.h,
               height: 280.h,
               color: PortfolioColors.technicalSkill,
               padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -106,18 +106,18 @@ class CardDesktop extends StatelessWidget {
               children: [
                 Container(
                   height: 12.h,
-                  width: 96.w,
+                  width: 96.h,
                   color: color1,
                 ),
                 Container(
                   height: 12.h,
-                  width: 96.w,
+                  width: 96.h,
                   color: color2,
                 ),
               ],
             ),
             Container(
-              width: 210.w,
+              width: 210.h,
               height: 280.h,
               color: PortfolioColors.technicalSkill,
               padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -133,6 +133,7 @@ class CardDesktop extends StatelessWidget {
                   SizedBox(height: 12.h),
                   Text(
                     title,
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 24.sp,

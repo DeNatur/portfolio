@@ -25,7 +25,6 @@ class ExperiencePageDesktop extends StatelessWidget {
           children: [
             _UpperWave(),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 102.w),
               child: ListView(
                 controller: _scrollController,
                 children: <Widget>[
@@ -54,9 +53,12 @@ class List extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          margin: EdgeInsets.only(top: 64.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          margin: EdgeInsets.only(
+              top: 64.h, bottom: 64.h, left: 101.w, right: 101.w),
+          child: Wrap(
+            spacing: 173.w,
+            runSpacing: 50.h,
+            alignment: WrapAlignment.spaceBetween,
             children: [
               CardDesktop(
                 color1: PortfolioColors.android,
@@ -104,14 +106,6 @@ class List extends StatelessWidget {
                       "",
                       loc.experience.sanity1,
                       "https://findair.eu/resources/case-studies/sanity/")),
-            ],
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.only(top: 64.h, bottom: 100.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
               CardDesktop(
                 color1: PortfolioColors.flutter,
                 color2: PortfolioColors.flutter,
@@ -170,6 +164,7 @@ class _Title extends StatelessWidget {
       alignment: Alignment.topLeft,
       margin: EdgeInsets.only(
         top: 160.h,
+        left: 101.w,
       ),
       child: Text(
         loc.experience.experience,
@@ -192,6 +187,7 @@ class _Legend extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(
         top: 36.h,
+        left: 101.w,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,

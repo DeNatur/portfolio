@@ -1,10 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/views/main_page.dart';
+import 'package:portfolio/ui/views/splash_page.dart';
 import 'package:portfolio/utils/statics/routes.dart';
+
+import 'statics/routes.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
+    case SplashViewRoute:
+      return _getMaterialPageRoute(
+          routeName: settings.name, viewToShow: SplashPage());
     case MainViewRoute:
       return _getMaterialPageRoute(
           routeName: settings.name, viewToShow: MainPage());

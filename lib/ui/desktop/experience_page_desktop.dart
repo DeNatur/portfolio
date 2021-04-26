@@ -190,24 +190,26 @@ class _Legend extends StatelessWidget {
         left: 101.w,
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 width: 88.w,
+                alignment: Alignment.centerLeft,
                 child: Text(
                   "Android",
                   style:
                       TextStyle(fontSize: 18.sp, color: PortfolioColors.white),
                 ),
               ),
-              SizedBox(
-                width: 16.w,
-              ),
               Container(
-                width: 40.w,
-                height: 4,
+                width: 20.h,
+                height: 4.h,
                 decoration: BoxDecoration(
                     color: PortfolioColors.android,
                     borderRadius: BorderRadius.circular(16)),
@@ -218,21 +220,22 @@ class _Legend extends StatelessWidget {
             height: 8.h,
           ),
           Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 width: 88.w,
+                alignment: Alignment.centerLeft,
                 child: Text(
                   "Flutter",
                   style:
                       TextStyle(fontSize: 18.sp, color: PortfolioColors.white),
                 ),
               ),
-              SizedBox(
-                width: 8.w,
-              ),
               Container(
-                width: 40.w,
-                height: 4,
+                width: 20.h,
+                height: 4.h,
                 decoration: BoxDecoration(
                     color: PortfolioColors.flutter,
                     borderRadius: BorderRadius.circular(16)),

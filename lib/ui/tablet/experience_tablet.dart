@@ -56,7 +56,7 @@ class List extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(
             top: 64.h,
-            bottom: 100.h,
+            bottom: 200.h,
           ),
           child: Wrap(
             spacing: 173.w,
@@ -200,21 +200,22 @@ class _Legend extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     width: 88.w,
+                    alignment: Alignment.centerLeft,
                     child: Text(
                       "Android",
                       style: TextStyle(
                           fontSize: 18.sp, color: PortfolioColors.white),
                     ),
                   ),
-                  SizedBox(
-                    width: 16.w,
-                  ),
                   Container(
-                    width: 40.w,
-                    height: 4,
+                    width: 20.h,
+                    height: 4.h,
                     decoration: BoxDecoration(
                         color: PortfolioColors.android,
                         borderRadius: BorderRadius.circular(16)),
@@ -225,21 +226,22 @@ class _Legend extends StatelessWidget {
                 height: 8.h,
               ),
               Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     width: 88.w,
+                    alignment: Alignment.centerLeft,
                     child: Text(
                       "Flutter",
                       style: TextStyle(
                           fontSize: 18.sp, color: PortfolioColors.white),
                     ),
                   ),
-                  SizedBox(
-                    width: 8.w,
-                  ),
                   Container(
-                    width: 40.w,
-                    height: 4,
+                    width: 20.h,
+                    height: 4.h,
                     decoration: BoxDecoration(
                         color: PortfolioColors.flutter,
                         borderRadius: BorderRadius.circular(16)),

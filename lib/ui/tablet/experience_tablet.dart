@@ -54,9 +54,14 @@ class List extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          margin: EdgeInsets.only(top: 64.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          margin: EdgeInsets.only(
+            top: 64.h,
+            bottom: 100.h,
+          ),
+          child: Wrap(
+            spacing: 173.w,
+            runSpacing: 50.h,
+            alignment: WrapAlignment.spaceBetween,
             children: [
               CardDesktop(
                 color1: PortfolioColors.android,
@@ -80,14 +85,6 @@ class List extends StatelessWidget {
                       loc.experience.findair1,
                       loc.experience.findair2,
                       "https://findair.eu/products/findair-app.html")),
-            ],
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.only(top: 64.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
               CardDesktop(
                   color1: PortfolioColors.flutter,
                   color2: PortfolioColors.android,
@@ -112,16 +109,6 @@ class List extends StatelessWidget {
                       "",
                       loc.experience.sanity1,
                       "https://findair.eu/resources/case-studies/sanity/")),
-            ],
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.only(
-            top: 64.h,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
               CardDesktop(
                 color1: PortfolioColors.flutter,
                 color2: PortfolioColors.flutter,
@@ -141,14 +128,6 @@ class List extends StatelessWidget {
                     "https://github.com/DeNatur/Weighted-Average-Calculator",
                     "github"),
               ),
-            ],
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.only(top: 64.h, bottom: 100.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
               CardPorftolioDesktop(
                 color1: PortfolioColors.flutter,
                 color2: PortfolioColors.flutter,
@@ -168,7 +147,7 @@ class List extends StatelessWidget {
               ),
             ],
           ),
-        ),
+        )
       ],
     );
   }

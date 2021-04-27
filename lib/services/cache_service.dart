@@ -14,7 +14,6 @@ class CacheService {
   Future preCacheImagesAndAnimations() async {
     await _precacheImages();
     await _precacheAnimations();
-    log("end lottie");
   }
 
   Future _precacheAnimations() async {

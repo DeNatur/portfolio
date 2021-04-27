@@ -4,6 +4,7 @@ import 'package:portfolio/generated/locale_base.dart';
 import 'package:portfolio/ui/components/about_dialog.dart';
 import 'package:portfolio/ui/components/blue_waves.dart';
 import 'package:portfolio/ui/desktop/card_desktop.dart';
+import 'package:portfolio/ui/mobile/card_mobile.dart';
 import 'package:portfolio/utils/statics/asset_names.dart';
 import 'package:portfolio/utils/statics/colors.dart';
 import 'package:simple_animations/simple_animations.dart';
@@ -25,7 +26,7 @@ class ExperiencePageMobile extends StatelessWidget {
           children: [
             _UpperWave(),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 102.w),
+              margin: EdgeInsets.symmetric(horizontal: 16.w),
               child: ListView(
                 controller: _scrollController,
                 children: <Widget>[
@@ -54,11 +55,16 @@ class List extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          margin: EdgeInsets.only(top: 64.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          margin: EdgeInsets.only(
+            top: 64.h,
+            bottom: 200.h,
+          ),
+          child: Wrap(
+            spacing: 48.w,
+            runSpacing: 32.h,
+            alignment: WrapAlignment.spaceBetween,
             children: [
-              CardDesktop(
+              CardMobile(
                 color1: PortfolioColors.android,
                 color2: PortfolioColors.android,
                 image: AssetImage(ASSET_AIDER),
@@ -68,7 +74,7 @@ class List extends StatelessWidget {
                     "https://play.google.com/store/apps/details?id=com.aider",
                     "aider"),
               ),
-              CardDesktop(
+              CardMobile(
                   color1: PortfolioColors.android,
                   color2: PortfolioColors.android,
                   image: AssetImage(ASSET_FINDAIR),
@@ -80,15 +86,7 @@ class List extends StatelessWidget {
                       loc.experience.findair1,
                       loc.experience.findair2,
                       "https://findair.eu/products/findair-app.html")),
-            ],
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.only(top: 64.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CardDesktop(
+              CardMobile(
                   color1: PortfolioColors.flutter,
                   color2: PortfolioColors.android,
                   image: AssetImage(ASSET_FINDAIR_RESEARCH),
@@ -100,7 +98,7 @@ class List extends StatelessWidget {
                       loc.experience.findair_r1,
                       loc.experience.findair_r2,
                       "https://findair.eu/products/findair-research-app.html")),
-              CardDesktop(
+              CardMobile(
                   color1: PortfolioColors.flutter,
                   color2: PortfolioColors.flutter,
                   image: AssetImage(ASSET_SANITY),
@@ -112,17 +110,7 @@ class List extends StatelessWidget {
                       "",
                       loc.experience.sanity1,
                       "https://findair.eu/resources/case-studies/sanity/")),
-            ],
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.only(
-            top: 64.h,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CardDesktop(
+              CardMobile(
                 color1: PortfolioColors.flutter,
                 color2: PortfolioColors.flutter,
                 image: AssetImage(ASSET_BMI),
@@ -131,7 +119,7 @@ class List extends StatelessWidget {
                 onPress: () => html.window
                     .open("https://github.com/DeNatur/bmi_diary", "github"),
               ),
-              CardDesktop(
+              CardMobile(
                 color1: PortfolioColors.android,
                 color2: PortfolioColors.android,
                 image: AssetImage(ASSET_WA_CALCULATOR),
@@ -141,15 +129,7 @@ class List extends StatelessWidget {
                     "https://github.com/DeNatur/Weighted-Average-Calculator",
                     "github"),
               ),
-            ],
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.only(top: 64.h, bottom: 100.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CardPorftolioDesktop(
+              CardPorftolioMobile(
                 color1: PortfolioColors.flutter,
                 color2: PortfolioColors.flutter,
                 image: AssetImage(ASSET_PORTFOLIO),
@@ -157,7 +137,7 @@ class List extends StatelessWidget {
                 onPress: () => html.window
                     .open("https://github.com/DeNatur/portfolio", "github"),
               ),
-              CardDesktop(
+              CardMobile(
                 color1: PortfolioColors.flutter,
                 color2: PortfolioColors.flutter,
                 image: AssetImage(ASSET_DRINGO),
@@ -168,7 +148,7 @@ class List extends StatelessWidget {
               ),
             ],
           ),
-        ),
+        )
       ],
     );
   }
@@ -187,7 +167,7 @@ class _Title extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       margin: EdgeInsets.only(
-        top: 160.h,
+        top: 64.h,
       ),
       child: Text(
         loc.experience.experience,
@@ -221,21 +201,22 @@ class _Legend extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     width: 88.w,
+                    alignment: Alignment.centerLeft,
                     child: Text(
                       "Android",
                       style: TextStyle(
                           fontSize: 16.sp, color: PortfolioColors.white),
                     ),
                   ),
-                  SizedBox(
-                    width: 16.w,
-                  ),
                   Container(
-                    width: 40.w,
-                    height: 4,
+                    width: 20.h,
+                    height: 4.h,
                     decoration: BoxDecoration(
                         color: PortfolioColors.android,
                         borderRadius: BorderRadius.circular(16)),
@@ -246,21 +227,22 @@ class _Legend extends StatelessWidget {
                 height: 8.h,
               ),
               Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     width: 88.w,
+                    alignment: Alignment.centerLeft,
                     child: Text(
                       "Flutter",
                       style: TextStyle(
                           fontSize: 16.sp, color: PortfolioColors.white),
                     ),
                   ),
-                  SizedBox(
-                    width: 8.w,
-                  ),
                   Container(
-                    width: 40.w,
-                    height: 4,
+                    width: 20.h,
+                    height: 4.h,
                     decoration: BoxDecoration(
                         color: PortfolioColors.flutter,
                         borderRadius: BorderRadius.circular(16)),
@@ -286,7 +268,7 @@ class _UpperWave extends StatelessWidget {
       alignment: Alignment.center,
       transform: Matrix4.rotationZ(math.pi),
       child: PlayAnimation(
-        tween: Tween<Offset>(begin: Offset(0, 250.h)),
+        tween: Tween<Offset>(begin: Offset(0, 250.h), end: Offset.zero),
         curve: Curves.easeInOutSine,
         builder: (context, child, Offset value) => Opacity(
             opacity: 1 - (value.dy / 250.h),

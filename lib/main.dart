@@ -1,8 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:portfolio/services/firebase_service.dart';
+import 'package:portfolio/ui/components/loading_page.dart';
 import 'package:portfolio/ui/views/main_page.dart';
 import 'package:portfolio/ui/views/splash_page.dart';
 import 'package:portfolio/utils/locale_delegate.dart';
@@ -17,7 +20,7 @@ void main() {
 }
 
 class MainApp extends HookWidget {
-  const MainApp({
+  MainApp({
     Key key,
   }) : super(key: key);
 
@@ -27,6 +30,15 @@ class MainApp extends HookWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+
+    if (useProvider(firebaseService).error) {
+      return MaterialApp(home: Scaffold(body: Text("Something went wrong")));
+    }
+
+    if (!useProvider(firebaseService).initialized) {
+      return MaterialApp(home: Scaffold(body: LoadingPage()));
+    }
+
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Szymon Stasik Portfolio',

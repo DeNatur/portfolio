@@ -58,10 +58,6 @@ class AboutPageMobile extends StatelessWidget {
                       _PersonalDesc(loc: loc),
                     ],
                   ),
-                  _ScrollIndicator(
-                    technicalSkillsKey: technicalSkillsKey,
-                    marginBottom: 24.h,
-                  ),
                 ],
               ),
             ),

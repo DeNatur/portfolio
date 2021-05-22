@@ -39,83 +39,86 @@ class AboutPageMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loc = Localizations.of<LocaleBase>(context, LocaleBase)!;
-    return Scrollbar(
-        controller: _scrollController,
-        isAlwaysShown: true,
-        child: ListView(
-          physics: BouncingScrollPhysics(),
-          controller: _scrollController,
-          children: <Widget>[
-            Container(
-              width: 360.w,
-              height: 640.h,
-              child: Stack(
-                children: [
-                  _Background(),
-                  _UpperWave(),
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      _PersonalInfo(loc: loc),
-                      _PersonalDesc(loc: loc),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              key: technicalSkillsKey,
-              width: 360.w,
-              margin: EdgeInsets.only(top: 36.h),
-              alignment: Alignment.center,
-              color: PortfolioColors.radialBgEnd,
-              child: Stack(
-                children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      SizedBox(height: 36.h),
-                      AboutSectionTitleMobile(
-                          sectionTitle: loc.about!.about,
-                          section: loc.about!.technical_skills),
-                      SizedBox(height: 24.h),
-                      TechnicalSkillsMobileRow(),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: _ScrollIndicator(
-                            technicalSkillsKey: achivmentsSkillsKey,
-                            marginBottom: 24.h),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            _BottomWave(
-              key: achivmentsSkillsKey,
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 16.w),
-              child: Column(
+    return ListView(
+      physics: BouncingScrollPhysics(),
+      controller: _scrollController,
+      children: <Widget>[
+        Container(
+          width: 360.w,
+          height: 640.h,
+          child: Stack(
+            children: [
+              _Background(),
+              _UpperWave(),
+              Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  SizedBox(height: 16.h),
-                  AboutSectionTitleMobile(
-                      sectionTitle: loc.about!.about,
-                      section: loc.about!.achivments),
-                  SizedBox(height: 32.h),
-                  AchivementsRow(
-                      loc: loc,
-                      blueTextStyle: _blueTextStyle,
-                      whiteTextStyle: _whiteTextStyle),
-                  SizedBox(height: 32.h),
-                  _SeeMyProjectsButton(loc: loc),
-                  SizedBox(height: 32.h),
+                  _PersonalInfo(loc: loc),
+                  _PersonalDesc(loc: loc),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: _ScrollIndicator(
+                        technicalSkillsKey: technicalSkillsKey,
+                        marginBottom: 24.h),
+                  )
                 ],
               ),
-            )
-          ],
-        ));
+            ],
+          ),
+        ),
+        Container(
+          key: technicalSkillsKey,
+          width: 360.w,
+          margin: EdgeInsets.only(top: 36.h),
+          alignment: Alignment.center,
+          color: PortfolioColors.radialBgEnd,
+          child: Stack(
+            children: [
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  SizedBox(height: 36.h),
+                  AboutSectionTitleMobile(
+                      sectionTitle: loc.about!.about,
+                      section: loc.about!.technical_skills),
+                  SizedBox(height: 24.h),
+                  TechnicalSkillsMobileRow(),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: _ScrollIndicator(
+                        technicalSkillsKey: achivmentsSkillsKey,
+                        marginBottom: 24.h),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+        _BottomWave(
+          key: achivmentsSkillsKey,
+        ),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 16.w),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(height: 16.h),
+              AboutSectionTitleMobile(
+                  sectionTitle: loc.about!.about,
+                  section: loc.about!.achivments),
+              SizedBox(height: 32.h),
+              AchivementsRow(
+                  loc: loc,
+                  blueTextStyle: _blueTextStyle,
+                  whiteTextStyle: _whiteTextStyle),
+              SizedBox(height: 32.h),
+              _SeeMyProjectsButton(loc: loc),
+              SizedBox(height: 32.h),
+            ],
+          ),
+        )
+      ],
+    );
   }
 }
 

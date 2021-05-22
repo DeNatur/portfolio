@@ -21,25 +21,22 @@ class ExperiencePageMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = Localizations.of<LocaleBase>(context, LocaleBase);
 
-    return Scrollbar(
-        isAlwaysShown: true,
-        controller: _scrollController,
-        child: Stack(
-          children: [
-            _UpperWave(),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 16.w),
-              child: ListView(
-                controller: _scrollController,
-                children: <Widget>[
-                  _Title(loc: loc),
-                  _Legend(),
-                  List(loc: loc),
-                ],
-              ),
-            ),
-          ],
-        ));
+    return Stack(
+      children: [
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 16.w),
+          child: ListView(
+            physics: BouncingScrollPhysics(),
+            controller: _scrollController,
+            children: <Widget>[
+              // _Title(loc: loc),
+              _Legend(),
+              List(loc: loc),
+            ],
+          ),
+        ),
+      ],
+    );
   }
 }
 
@@ -193,7 +190,7 @@ class _Legend extends StatelessWidget {
         Container(
           alignment: Alignment.topCenter,
           margin: EdgeInsets.only(
-            top: 36.h,
+            top: 72.h,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

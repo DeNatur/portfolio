@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -30,30 +32,47 @@ class TopBarMobile extends HookWidget {
         currentPageTitle = "Contact";
         break;
     }
-    return Container(
-      height: 56 + topPadding,
-      margin: EdgeInsets.only(top: 16.h + topPadding, left: 12, right: 16),
-      child: Stack(
-        children: [
-          IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: Scaffold.of(context).openDrawer,
-            color: PortfolioColors.white,
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 8),
-            alignment: Alignment.topCenter,
-            child: Text(
-              currentPageTitle,
-              style: TextStyle(
-                  color: PortfolioColors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
+    return Stack(
+      children: [
+        ClipRRect(
+          child: Container(
+            height: 64 + topPadding,
+            child: BackdropFilter(
+              filter: new ImageFilter.blur(sigmaX: 16.0, sigmaY: 16.0),
+              child: Container(
+                height: 64 + topPadding,
+                color: PortfolioColors.linearBgEnd.withOpacity(0.2),
+              ),
             ),
           ),
-          Container()
-        ],
-      ),
+        ),
+        Container(
+          height: 56 + topPadding,
+          alignment: Alignment.center,
+          margin: EdgeInsets.only(top: 8.h + topPadding, left: 12, right: 16),
+          child: Stack(
+            children: [
+              IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: Scaffold.of(context).openDrawer,
+                color: PortfolioColors.white,
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 12),
+                alignment: Alignment.topCenter,
+                child: Text(
+                  currentPageTitle,
+                  style: TextStyle(
+                      color: PortfolioColors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container()
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

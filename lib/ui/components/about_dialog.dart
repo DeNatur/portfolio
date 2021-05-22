@@ -16,7 +16,7 @@ void showProjectDialog(BuildContext context, String? title, String? desc1,
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: PortfolioColors.white,
-                    fontSize: 42.sp)),
+                    fontSize: 32.sp)),
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
@@ -27,7 +27,7 @@ void showProjectDialog(BuildContext context, String? title, String? desc1,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 36.sp,
+                    fontSize: 24.sp,
                     color: PortfolioColors.wave1),
               ),
               SizedBox(

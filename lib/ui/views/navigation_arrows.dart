@@ -48,7 +48,7 @@ class NavigationArrows extends HookWidget {
         textSize = 18.sp;
         break;
       case DeviceScreenType.mobile:
-        pad = 16;
+        pad = 0;
         size = 60.h;
         textSize = 12.sp;
         break;

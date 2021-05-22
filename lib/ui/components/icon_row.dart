@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/components/icon_image_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'dart:html' as html;
+
+import 'package:url_launcher/url_launcher.dart';
 
 class IconContactRow extends StatelessWidget {
   final AlignmentGeometry alignment;
@@ -21,24 +22,22 @@ class IconContactRow extends StatelessWidget {
         children: [
           IconImageButton(
             image: AssetImage("assets/images/github.png"),
-            onPressed: () =>
-                html.window.open("https://github.com/DeNatur", "github"),
+            onPressed: () => launch("https://github.com/DeNatur"),
           ),
           SizedBox(
             width: 36.w,
           ),
           IconImageButton(
             image: AssetImage("assets/images/fb.png"),
-            onPressed: () => html.window
-                .open("https://www.facebook.com/szymon.stasik.10", "facebook"),
+            onPressed: () =>
+                launch("https://www.facebook.com/szymon.stasik.10"),
           ),
           SizedBox(
             width: 36.w,
           ),
           IconImageButton(
             image: AssetImage("assets/images/linkedin.png"),
-            onPressed: () => html.window
-                .open("https://www.linkedin.com/in/szymonstasik", "linkedIn"),
+            onPressed: () => launch("https://www.linkedin.com/in/szymonstasik"),
           ),
         ],
       ),

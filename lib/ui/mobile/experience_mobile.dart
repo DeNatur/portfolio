@@ -7,10 +7,12 @@ import 'package:portfolio/ui/desktop/card_desktop.dart';
 import 'package:portfolio/ui/mobile/card_mobile.dart';
 import 'package:portfolio/utils/statics/asset_names.dart';
 import 'package:portfolio/utils/statics/colors.dart';
+import 'package:portfolio/utils/statics/routes.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:math' as math;
-import 'dart:html' as html;
+
+import 'package:url_launcher/url_launcher.dart';
 
 class ExperiencePageMobile extends StatelessWidget {
   final ScrollController _scrollController = new ScrollController();
@@ -70,9 +72,9 @@ class List extends StatelessWidget {
                 image: AssetImage(ASSET_AIDER),
                 title: loc!.experience!.aider,
                 desc: loc!.experience!.aider_desc,
-                onPress: () => html.window.open(
-                    "https://play.google.com/store/apps/details?id=com.aider",
-                    "aider"),
+                onPress: () => launch(
+                  "https://play.google.com/store/apps/details?id=com.aider",
+                ),
               ),
               CardMobile(
                   color1: PortfolioColors.android,
@@ -116,8 +118,7 @@ class List extends StatelessWidget {
                 image: AssetImage(ASSET_BMI),
                 title: loc!.experience!.bmi_diary,
                 desc: "BMI calcualtor and Diary made In Flutter",
-                onPress: () => html.window
-                    .open("https://github.com/DeNatur/bmi_diary", "github"),
+                onPress: () => launch("https://github.com/DeNatur/bmi_diary"),
               ),
               CardMobile(
                 color1: PortfolioColors.android,
@@ -125,17 +126,16 @@ class List extends StatelessWidget {
                 image: AssetImage(ASSET_WA_CALCULATOR),
                 title: "WA Calculator",
                 desc: "Simple and intuitive weighted average calculator ",
-                onPress: () => html.window.open(
-                    "https://github.com/DeNatur/Weighted-Average-Calculator",
-                    "github"),
+                onPress: () => launch(
+                  "https://github.com/DeNatur/Weighted-Average-Calculator",
+                ),
               ),
               CardPorftolioMobile(
                 color1: PortfolioColors.flutter,
                 color2: PortfolioColors.flutter,
                 image: AssetImage(ASSET_PORTFOLIO),
                 title: "Portfolio",
-                onPress: () => html.window
-                    .open("https://github.com/DeNatur/portfolio", "github"),
+                onPress: () => launch("https://github.com/DeNatur/portfolio"),
               ),
               CardMobile(
                 color1: PortfolioColors.flutter,
@@ -143,8 +143,7 @@ class List extends StatelessWidget {
                 image: AssetImage(ASSET_DRINGO),
                 title: "Dringo",
                 desc: "Social app\nSoon on market!",
-                onPress: () =>
-                    html.window.open("https://dringo.app/", "dringo"),
+                onPress: () => launchURL("https://dringo.app/"),
               ),
             ],
           ),

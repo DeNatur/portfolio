@@ -21,7 +21,7 @@ class NavigationArrows extends HookWidget {
     MainViewModel model = useProvider<MainViewModel>(mainViewModel);
     PortfolioPage currentPage = model.currentPage;
     String leftText = "", rightText = "";
-    double size, textSize;
+    double size, textSize, pad;
     switch (currentPage) {
       case PortfolioPage.Home:
         leftText = "";
@@ -43,14 +43,17 @@ class NavigationArrows extends HookWidget {
     var deviceType = getDeviceType(MediaQuery.of(context).size);
     switch (deviceType) {
       case DeviceScreenType.tablet:
+        pad = 20.w;
         size = 100.h;
         textSize = 18.sp;
         break;
       case DeviceScreenType.mobile:
+        pad = 16;
         size = 60.h;
         textSize = 12.sp;
         break;
       default:
+        pad = 20.w;
         size = 100.h;
         textSize = 18.sp;
         break;
@@ -58,7 +61,7 @@ class NavigationArrows extends HookWidget {
     return Center(
       child: Row(
         children: [
-          SizedBox(width: 20.w),
+          SizedBox(width: pad),
           leftText == ""
               ? Container()
               : ArrowAnim(
@@ -78,7 +81,7 @@ class NavigationArrows extends HookWidget {
                   text: rightText,
                   reverse: false,
                 ),
-          SizedBox(width: 20.w),
+          SizedBox(width: pad),
         ],
       ),
     );

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/statics/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'dart:html' as html;
+import 'package:url_launcher/url_launcher.dart';
 
 void showProjectDialog(BuildContext context, String? title, String? desc1,
     String? desc2, String htmlUrl) {
@@ -54,7 +54,7 @@ void showProjectDialog(BuildContext context, String? title, String? desc1,
                 height: 32.h,
               ),
               TextButton(
-                  onPressed: () => html.window.open(htmlUrl, "project"),
+                  onPressed: () => launch(htmlUrl),
                   child: Text(htmlUrl, style: TextStyle(fontSize: 16.sp)))
             ],
           )));

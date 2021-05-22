@@ -22,6 +22,6 @@ class IconImageButton extends StatelessWidget {
         color: color,
       ),
       onPressed: onPressed as void Function()?,
-    ).showCursorOnHover.moveUpOnHover;
+    ).moveUpOnHover;
   }
 }

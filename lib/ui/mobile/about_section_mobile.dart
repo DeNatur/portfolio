@@ -43,6 +43,7 @@ class AboutPageMobile extends StatelessWidget {
         controller: _scrollController,
         isAlwaysShown: true,
         child: ListView(
+          physics: BouncingScrollPhysics(),
           controller: _scrollController,
           children: <Widget>[
             Container(
@@ -53,6 +54,7 @@ class AboutPageMobile extends StatelessWidget {
                   _Background(),
                   _UpperWave(),
                   Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       _PersonalInfo(loc: loc),
                       _PersonalDesc(loc: loc),
@@ -168,7 +170,8 @@ class AchivementsRow extends StatelessWidget {
                       style: _blueTextStyle,
                       children: [
                         TextSpan(
-                            text: loc.about!.in_phoenix, style: _whiteTextStyle),
+                            text: loc.about!.in_phoenix,
+                            style: _whiteTextStyle),
                         TextSpan(
                             text: loc.about!.largest_international,
                             style: _blueTextStyle),
@@ -228,7 +231,8 @@ class AchivementsRow extends StatelessWidget {
                       text: loc.about!.international_invention,
                       style: _whiteTextStyle,
                       children: [
-                        TextSpan(text: loc.about!.interg, style: _blueTextStyle),
+                        TextSpan(
+                            text: loc.about!.interg, style: _blueTextStyle),
                         TextSpan(
                             text: loc.about!.main_honorary,
                             style: _whiteTextStyle),
@@ -277,7 +281,8 @@ class AchivementsRow extends StatelessWidget {
                         TextSpan(
                             text: loc.about!.programmer_skills,
                             style: _blueTextStyle),
-                        TextSpan(text: loc.about!.under, style: _whiteTextStyle),
+                        TextSpan(
+                            text: loc.about!.under, style: _whiteTextStyle),
                       ]),
                 ),
               ),
@@ -453,7 +458,7 @@ class _PersonalInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         alignment: Alignment.topCenter,
-        margin: EdgeInsets.only(top: 84.h),
+        margin: EdgeInsets.only(top: 52.h),
         child: PlayAnimation(
           tween: Tween(begin: 0.0, end: 1.0),
           curve: Curves.easeInOutSine,
@@ -462,14 +467,6 @@ class _PersonalInfo extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                loc.about!.about_me!,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24.sp,
-                    color: PortfolioColors.white),
-              ),
               SizedBox(
                 height: 32.h,
               ),

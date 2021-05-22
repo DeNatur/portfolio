@@ -4,13 +4,13 @@ import 'package:portfolio/utils/statics/colors.dart';
 
 class TechnicalSkillMobile extends StatelessWidget {
   final ImageProvider image;
-  final String title;
-  final String desc;
+  final String? title;
+  final String? desc;
   const TechnicalSkillMobile(
-      {Key key,
-      @required this.image,
-      @required this.title,
-      @required this.desc})
+      {Key? key,
+      required this.image,
+      required this.title,
+      required this.desc})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class TechnicalSkillMobile extends StatelessWidget {
             height: 12.h,
           ),
           Text(
-            title,
+            title!,
             style: TextStyle(
                 color: PortfolioColors.white,
                 fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class TechnicalSkillMobile extends StatelessWidget {
             height: 16.h,
           ),
           Text(
-            desc,
+            desc!,
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: PortfolioColors.technicalSkillDesc,
@@ -60,13 +60,13 @@ class TechnicalSkillMobile extends StatelessWidget {
 
 class TechnicalSkill extends StatelessWidget {
   final ImageProvider image;
-  final String title;
-  final String desc;
+  final String? title;
+  final String? desc;
   const TechnicalSkill(
-      {Key key,
-      @required this.image,
-      @required this.title,
-      @required this.desc})
+      {Key? key,
+      required this.image,
+      required this.title,
+      required this.desc})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -91,7 +91,7 @@ class TechnicalSkill extends StatelessWidget {
             height: 17.h,
           ),
           Text(
-            title,
+            title!,
             style: TextStyle(
                 color: PortfolioColors.white,
                 fontWeight: FontWeight.bold,
@@ -101,7 +101,7 @@ class TechnicalSkill extends StatelessWidget {
             height: 19.h,
           ),
           Text(
-            desc,
+            desc!,
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: PortfolioColors.technicalSkillDesc,

@@ -12,34 +12,34 @@ class TopRow extends HookWidget {
   Widget build(BuildContext context) {
     MainViewModel model = useProvider<MainViewModel>(mainViewModel);
     PortfolioPage currentPage = model.currentPage;
-    final loc = Localizations.of<LocaleBase>(context, LocaleBase);
+    final loc = Localizations.of<LocaleBase>(context, LocaleBase)!;
 
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         TopTile(
-          text: loc.main.home,
+          text: loc.main!.home,
           current: currentPage == PortfolioPage.Home,
           onPressed: () {
             model.changePage(PortfolioPage.Home);
           },
         ),
         TopTile(
-          text: loc.main.about,
+          text: loc.main!.about,
           current: currentPage == PortfolioPage.About,
           onPressed: () {
             model.changePage(PortfolioPage.About);
           },
         ),
         TopTile(
-          text: loc.main.experience,
+          text: loc.main!.experience,
           current: currentPage == PortfolioPage.Experience,
           onPressed: () {
             model.changePage(PortfolioPage.Experience);
           },
         ),
         TopTile(
-          text: loc.main.contact,
+          text: loc.main!.contact,
           current: currentPage == PortfolioPage.Contact,
           onPressed: () {
             model.changePage(PortfolioPage.Contact);

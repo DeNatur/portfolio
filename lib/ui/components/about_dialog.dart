@@ -4,14 +4,14 @@ import 'package:portfolio/utils/statics/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:html' as html;
 
-void showProjectDialog(BuildContext context, String title, String desc1,
-    String desc2, String htmlUrl) {
+void showProjectDialog(BuildContext context, String? title, String? desc1,
+    String? desc2, String htmlUrl) {
   showDialog(
       context: context,
       builder: (context) => AlertDialog(
           backgroundColor: PortfolioColors.radialBgEnd,
           title: Center(
-            child: Text(title,
+            child: Text(title!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -34,7 +34,7 @@ void showProjectDialog(BuildContext context, String title, String desc1,
                 height: 32.h,
               ),
               Text(
-                desc1,
+                desc1!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: PortfolioColors.lightBlue, fontSize: 18.sp),
@@ -43,7 +43,7 @@ void showProjectDialog(BuildContext context, String title, String desc1,
                 height: 32.h,
               ),
               Text(
-                desc2,
+                desc2!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 18.sp,

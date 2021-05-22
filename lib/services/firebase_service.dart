@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:portfolio/buisness_logic/utils/view_model.dart';
+import 'package:portfolio/utils/statics/asset_names.dart';
 
 class FirebaseService extends ViewModel {
   bool _error = false, _initialized = false;
@@ -7,6 +10,10 @@ class FirebaseService extends ViewModel {
   bool get initialized => _initialized;
 
   FirebaseService() {
+    if (DEBUG) {
+      log("message");
+      return;
+    }
     try {
       Firebase.initializeApp().then((value) {
         _initialized = true;

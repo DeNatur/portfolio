@@ -4,7 +4,7 @@ import 'package:portfolio/utils/statics/colors.dart';
 
 class LoadingPage extends StatelessWidget {
   const LoadingPage({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

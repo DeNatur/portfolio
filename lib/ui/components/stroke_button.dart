@@ -8,15 +8,15 @@ import '../../utils/statics/colors.dart';
 
 class StrokeButton extends StatelessWidget {
   final Function onPressed;
-  final String text;
+  final String? text;
   final double textSize;
   final Color color;
   final EdgeInsetsGeometry margin;
 
   const StrokeButton(
-      {Key key,
-      @required this.onPressed,
-      @required this.text,
+      {Key? key,
+      required this.onPressed,
+      required this.text,
       this.color = PortfolioColors.ultraLightBlue,
       this.margin = EdgeInsets.zero,
       this.textSize = 16})
@@ -33,14 +33,14 @@ class StrokeButton extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
             child: Center(
               child: Text(
-                text,
+                text!,
                 style: TextStyle(
                     fontSize: textSize,
                     fontWeight: FontWeight.bold,
                     color: PortfolioColors.ultraLightBlue),
               ),
             ),
-            onPressed: onPressed,
+            onPressed: onPressed as void Function()?,
           ),
         ],
       ),

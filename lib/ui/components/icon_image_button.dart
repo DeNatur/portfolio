@@ -8,9 +8,9 @@ class IconImageButton extends StatelessWidget {
   final ImageProvider image;
   final Color color;
   const IconImageButton(
-      {Key key,
-      @required this.onPressed,
-      @required this.image,
+      {Key? key,
+      required this.onPressed,
+      required this.image,
       this.color = Colors.white})
       : super(key: key);
   @override
@@ -21,7 +21,7 @@ class IconImageButton extends StatelessWidget {
         image,
         color: color,
       ),
-      onPressed: onPressed,
+      onPressed: onPressed as void Function()?,
     ).showCursorOnHover.moveUpOnHover;
   }
 }

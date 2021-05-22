@@ -90,13 +90,13 @@ class ArrowAnim extends StatefulWidget {
   final String text;
   final double size;
   final double textSize;
-  final Function onPressed;
+  final Function? onPressed;
   const ArrowAnim({
-    Key key,
-    @required this.size,
-    @required this.textSize,
+    Key? key,
+    required this.size,
+    required this.textSize,
     this.reverse = false,
-    @required this.text,
+    required this.text,
     this.onPressed,
   }) : super(key: key);
 
@@ -106,9 +106,9 @@ class ArrowAnim extends StatefulWidget {
 
 class _ArrowAnimState extends State<ArrowAnim> with TickerProviderStateMixin {
   bool animate = false;
-  AnimationController _arrowController;
-  AnimationController _textController;
-  Animation<double> _textAnimation;
+  AnimationController? _arrowController;
+  late AnimationController _textController;
+  late Animation<double> _textAnimation;
 
   @override
   void reassemble() {
@@ -118,7 +118,7 @@ class _ArrowAnimState extends State<ArrowAnim> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    _arrowController.dispose();
+    _arrowController!.dispose();
     _textController.dispose();
     super.dispose();
   }
@@ -154,7 +154,7 @@ class _ArrowAnimState extends State<ArrowAnim> with TickerProviderStateMixin {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: widget.onPressed,
+        onTap: widget.onPressed as void Function()?,
         child: Stack(
           alignment: Alignment.center,
           children: [
@@ -179,7 +179,7 @@ class _ArrowAnimState extends State<ArrowAnim> with TickerProviderStateMixin {
                       controller: _arrowController,
                       height: widget.size,
                       onLoaded: (composition) {
-                        _arrowController..duration = composition.duration;
+                        _arrowController?..duration = composition.duration;
                       },
                     ),
                   )
@@ -188,19 +188,19 @@ class _ArrowAnimState extends State<ArrowAnim> with TickerProviderStateMixin {
                     controller: _arrowController,
                     height: widget.size,
                     onLoaded: (composition) {
-                      _arrowController..duration = composition.duration;
+                      _arrowController?..duration = composition.duration;
                     },
                   ),
           ],
         ),
       ),
       onEnter: (_) {
-        _arrowController.repeat();
+        _arrowController!.repeat();
         _textController.forward();
       },
       onExit: (_) {
-        _arrowController.stop();
-        _arrowController.reset();
+        _arrowController!.stop();
+        _arrowController!.reset();
         _textController.reverse();
       },
     );

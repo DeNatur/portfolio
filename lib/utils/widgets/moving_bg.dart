@@ -12,7 +12,7 @@ class MovingBackground extends StatelessWidget {
   final bool animate;
 
   const MovingBackground(
-      {Key key, this.maxRows = 4, this.maxColumns = 10, this.animate = true})
+      {Key? key, this.maxRows = 4, this.maxColumns = 10, this.animate = true})
       : super(key: key);
 
   @override
@@ -29,7 +29,7 @@ class MovingBackground extends StatelessWidget {
     Random random = new Random();
     int randomColumn = random.nextInt(maxRows);
 
-    List<Widget> result = new List();
+    List<Widget> result = [];
     for (int i = 0; i < randomColumn; i++) {
       int randTime = random.nextInt(4000) + 7000;
       int randSize = random.nextInt(8) + 12;
@@ -92,7 +92,7 @@ class MovingBackground extends StatelessWidget {
   List<Widget> getRandomizedColumn(double width) {
     Random random = new Random();
     int randomColumn = random.nextInt(maxColumns) + 10;
-    List<Widget> result = new List();
+    List<Widget> result = [];
     for (int i = 0; i < randomColumn; i++) {
       result.add(Row(
           mainAxisSize: MainAxisSize.max,

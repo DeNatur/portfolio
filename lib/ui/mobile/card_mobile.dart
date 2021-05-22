@@ -7,23 +7,23 @@ import 'package:portfolio/utils/widgets/web_extensions.dart';
 class CardPorftolioMobile extends StatelessWidget {
   final Color color1;
   final Color color2;
-  final ImageProvider image;
-  final String title;
+  final ImageProvider? image;
+  final String? title;
   final Function onPress;
   const CardPorftolioMobile({
-    Key key,
-    @required this.color1,
-    @required this.color2,
+    Key? key,
+    required this.color1,
+    required this.color2,
     this.image,
     this.title,
-    @required this.onPress,
+    required this.onPress,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: onPress,
+        onTap: onPress as void Function()?,
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -54,12 +54,12 @@ class CardPorftolioMobile extends StatelessWidget {
                     height: 12.h,
                   ),
                   Image(
-                    image: image,
+                    image: image!,
                     height: 92.h,
                   ),
                   SizedBox(height: 12.h),
                   Text(
-                    title,
+                    title!,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 14.sp,
@@ -78,25 +78,25 @@ class CardPorftolioMobile extends StatelessWidget {
 class CardMobile extends StatelessWidget {
   final Color color1;
   final Color color2;
-  final ImageProvider image;
-  final String title;
-  final String desc;
+  final ImageProvider? image;
+  final String? title;
+  final String? desc;
   final Function onPress;
   const CardMobile(
-      {Key key,
-      @required this.color1,
-      @required this.color2,
+      {Key? key,
+      required this.color1,
+      required this.color2,
       this.image,
       this.title,
       this.desc,
-      @required this.onPress})
+      required this.onPress})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: onPress,
+        onTap: onPress as void Function()?,
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -127,12 +127,12 @@ class CardMobile extends StatelessWidget {
                     height: 21.h,
                   ),
                   Image(
-                    image: image,
+                    image: image!,
                     height: 54.h,
                   ),
                   SizedBox(height: 12.h),
                   Text(
-                    title,
+                    title!,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -143,7 +143,7 @@ class CardMobile extends StatelessWidget {
                     height: 12.h,
                   ),
                   Text(
-                    desc,
+                    desc!,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 10.sp, color: PortfolioColors.lightBlue),

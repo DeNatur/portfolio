@@ -29,7 +29,7 @@ class HomePageMobile extends StatelessWidget {
       fontWeight: FontWeight.bold);
   @override
   Widget build(BuildContext context) {
-    final loc = Localizations.of<LocaleBase>(context, LocaleBase);
+    final loc = Localizations.of<LocaleBase>(context, LocaleBase)!;
 
     return Container(
       width: double.infinity,
@@ -57,18 +57,18 @@ class HomePageMobile extends StatelessWidget {
                     child: RichText(
                       textAlign: TextAlign.center,
                       text: new TextSpan(
-                          text: loc.home.my_name_is,
+                          text: loc.home!.my_name_is,
                           style: _whiteBigTextStyle,
                           children: [
                             TextSpan(
-                                text: loc.home.szymon_stasik,
+                                text: loc.home!.szymon_stasik,
                                 style: _blueBigTextStyle),
                             TextSpan(
-                              text: loc.home.born_in_poland,
+                              text: loc.home!.born_in_poland,
                               style: _whiteBigTextStyle,
                             ),
                             TextSpan(
-                                text: loc.home.mobile_applications,
+                                text: loc.home!.mobile_applications,
                                 style: _blueBigTextStyle)
                           ]),
                     ),
@@ -96,39 +96,39 @@ class HomePageMobile extends StatelessWidget {
                     child: RichText(
                       textAlign: TextAlign.center,
                       text: new TextSpan(
-                          text: loc.home.to_be_more_than,
+                          text: loc.home!.to_be_more_than,
                           style: _whiteSmallTextStyle,
                           children: [
                             TextSpan(
-                                text: loc.home.coder,
+                                text: loc.home!.coder,
                                 style: _blueSmallTextStyle),
                             TextSpan(
-                              text: loc.home.besides_writing,
+                              text: loc.home!.besides_writing,
                               style: _whiteSmallTextStyle,
                             ),
                             TextSpan(
-                                text: loc.home.clear_code,
+                                text: loc.home!.clear_code,
                                 style: _blueSmallTextStyle),
                             TextSpan(
-                              text: loc.home.and,
+                              text: loc.home!.and,
                               style: _whiteSmallTextStyle,
                             ),
                             TextSpan(
-                                text: loc.home.tests,
+                                text: loc.home!.tests,
                                 style: _blueSmallTextStyle),
                             TextSpan(
-                              text: loc.home.i_strive,
+                              text: loc.home!.i_strive,
                               style: _whiteSmallTextStyle,
                             ),
                             TextSpan(
-                                text: loc.home.beautiful_designs,
+                                text: loc.home!.beautiful_designs,
                                 style: _blueSmallTextStyle),
                             TextSpan(
-                              text: loc.home.and,
+                              text: loc.home!.and,
                               style: _whiteSmallTextStyle,
                             ),
                             TextSpan(
-                                text: loc.home.animations,
+                                text: loc.home!.animations,
                                 style: _blueSmallTextStyle),
                           ]),
                     ),

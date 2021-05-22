@@ -17,7 +17,7 @@ class MainPageDrawer extends HookWidget {
     final double paddingTop = MediaQuery.of(context).padding.top;
     MainViewModel model = useProvider<MainViewModel>(mainViewModel);
     PortfolioPage currentPage = model.currentPage;
-    final loc = Localizations.of<LocaleBase>(context, LocaleBase);
+    final loc = Localizations.of<LocaleBase>(context, LocaleBase)!;
 
     return Container(
       width: ScreenUtil().screenWidth * 0.6,
@@ -53,7 +53,7 @@ class MainPageDrawer extends HookWidget {
                 ),
                 _DrawerTile(
                   onPressed: () => model.changePage(PortfolioPage.Home),
-                  text: loc.main.home,
+                  text: loc.main!.home,
                   currentPage: currentPage == PortfolioPage.Home,
                 ),
                 SizedBox(
@@ -61,7 +61,7 @@ class MainPageDrawer extends HookWidget {
                 ),
                 _DrawerTile(
                   onPressed: () => model.changePage(PortfolioPage.About),
-                  text: loc.main.about,
+                  text: loc.main!.about,
                   currentPage: currentPage == PortfolioPage.About,
                 ),
                 SizedBox(
@@ -69,7 +69,7 @@ class MainPageDrawer extends HookWidget {
                 ),
                 _DrawerTile(
                   onPressed: () => model.changePage(PortfolioPage.Experience),
-                  text: loc.main.experience,
+                  text: loc.main!.experience,
                   currentPage: currentPage == PortfolioPage.Experience,
                 ),
                 SizedBox(
@@ -77,7 +77,7 @@ class MainPageDrawer extends HookWidget {
                 ),
                 _DrawerTile(
                   onPressed: () => model.changePage(PortfolioPage.Contact),
-                  text: loc.main.contact,
+                  text: loc.main!.contact,
                   currentPage: currentPage == PortfolioPage.Contact,
                 ),
               ],
@@ -91,13 +91,13 @@ class MainPageDrawer extends HookWidget {
 
 class _DrawerTile extends StatelessWidget {
   final Function onPressed;
-  final String text;
+  final String? text;
   final bool currentPage;
   const _DrawerTile({
-    Key key,
-    @required this.onPressed,
-    @required this.text,
-    @required this.currentPage,
+    Key? key,
+    required this.onPressed,
+    required this.text,
+    required this.currentPage,
   }) : super(key: key);
 
   @override
@@ -116,7 +116,7 @@ class _DrawerTile extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: Row(
             children: [
-              Text(text,
+              Text(text!,
                   style: TextStyle(
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w500,

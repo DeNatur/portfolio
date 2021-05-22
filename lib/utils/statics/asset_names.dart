@@ -30,3 +30,5 @@ const String ASSET_PORTFOLIO = "assets/images/portfolio.png";
 const String ASSET_SANITY = "assets/images/sanity.png";
 const String ASSET_WA_CALCULATOR = "assets/images/wa_calculator.png";
 const String ASSET_DRINGO = "assets/images/dringo.png";
+
+const bool DEBUG = true;

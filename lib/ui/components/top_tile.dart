@@ -6,15 +6,15 @@ import '../../utils/statics/colors.dart';
 import 'package:portfolio/utils/widgets/web_extensions.dart';
 
 class TopTile extends StatelessWidget {
-  final String text;
+  final String? text;
   final bool current;
   final Function onPressed;
 
   const TopTile(
-      {Key key,
-      @required this.text,
-      @required this.current,
-      @required this.onPressed})
+      {Key? key,
+      required this.text,
+      required this.current,
+      required this.onPressed})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -25,14 +25,14 @@ class TopTile extends StatelessWidget {
           hoverColor: Colors.transparent),
       child: MaterialButton(
         padding: EdgeInsets.zero,
-        onPressed: onPressed,
+        onPressed: onPressed as void Function()?,
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: 32.w),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                text,
+                text!,
                 style: TextStyle(
                     fontSize: 18.sp,
                     fontWeight: FontWeight.bold,

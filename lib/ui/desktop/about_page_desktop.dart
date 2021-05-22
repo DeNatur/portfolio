@@ -35,7 +35,7 @@ class AboutPageDesktop extends StatelessWidget {
       fontWeight: FontWeight.bold);
   @override
   Widget build(BuildContext context) {
-    final loc = Localizations.of<LocaleBase>(context, LocaleBase);
+    final loc = Localizations.of<LocaleBase>(context, LocaleBase)!;
     return Scrollbar(
       isAlwaysShown: true,
       controller: _scrollController,
@@ -78,8 +78,8 @@ class AboutPageDesktop extends StatelessWidget {
                   children: <Widget>[
                     SizedBox(height: 24.h),
                     AboutSectionTitleDesktop(
-                        sectionTitle: loc.about.about,
-                        section: loc.about.technical_skills),
+                        sectionTitle: loc.about!.about,
+                        section: loc.about!.technical_skills),
                     SizedBox(height: 136.h),
                     TechnicalSkillsRow(),
                   ],
@@ -100,8 +100,8 @@ class AboutPageDesktop extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 AboutSectionTitleDesktop(
-                    sectionTitle: loc.about.about,
-                    section: loc.about.achivments),
+                    sectionTitle: loc.about!.about,
+                    section: loc.about!.achivments),
                 SizedBox(height: 32.h),
                 AchivementsRow(
                     loc: loc,
@@ -121,8 +121,8 @@ class AboutPageDesktop extends StatelessWidget {
 
 class _SeeMyProjectsButton extends HookWidget {
   const _SeeMyProjectsButton({
-    Key key,
-    @required this.loc,
+    Key? key,
+    required this.loc,
   }) : super(key: key);
 
   final LocaleBase loc;
@@ -132,17 +132,17 @@ class _SeeMyProjectsButton extends HookWidget {
     final model = useProvider(mainViewModel);
     return StrokeButton(
         onPressed: () => model.changePage(PortfolioPage.Experience),
-        text: loc.about.see_my_project,
+        text: loc.about!.see_my_project,
         textSize: 20.sp);
   }
 }
 
 class AchivementsRow extends StatelessWidget {
   const AchivementsRow({
-    Key key,
-    @required this.loc,
-    @required TextStyle blueTextStyle,
-    @required TextStyle whiteTextStyle,
+    Key? key,
+    required this.loc,
+    required TextStyle blueTextStyle,
+    required TextStyle whiteTextStyle,
   })  : _blueTextStyle = blueTextStyle,
         _whiteTextStyle = whiteTextStyle,
         super(key: key);
@@ -164,18 +164,18 @@ class AchivementsRow extends StatelessWidget {
             descWidget: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
-                  text: loc.about.intel_isef_2019,
+                  text: loc.about!.intel_isef_2019,
                   style: _blueTextStyle,
                   children: [
                     TextSpan(
-                        text: loc.about.in_phoenix, style: _whiteTextStyle),
+                        text: loc.about!.in_phoenix, style: _whiteTextStyle),
                     TextSpan(
-                        text: loc.about.largest_international,
+                        text: loc.about!.largest_international,
                         style: _blueTextStyle),
                     TextSpan(
-                        text: loc.about.science_competition,
+                        text: loc.about!.science_competition,
                         style: _whiteTextStyle),
-                    TextSpan(text: loc.about.amsd, style: _blueTextStyle),
+                    TextSpan(text: loc.about!.amsd, style: _blueTextStyle),
                   ]),
             ),
           ),
@@ -184,23 +184,23 @@ class AchivementsRow extends StatelessWidget {
             descWidget: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
-                  text: loc.about.explory,
+                  text: loc.about!.explory,
                   style: _whiteTextStyle,
                   children: [
-                    TextSpan(text: loc.about.nationwide, style: _blueTextStyle),
+                    TextSpan(text: loc.about!.nationwide, style: _blueTextStyle),
                     TextSpan(
-                        text: loc.about.science_competition_explory,
+                        text: loc.about!.science_competition_explory,
                         style: _whiteTextStyle),
-                    TextSpan(text: loc.about.finalist, style: _blueTextStyle),
+                    TextSpan(text: loc.about!.finalist, style: _blueTextStyle),
                     TextSpan(
-                        text: loc.about.and_accredited, style: _whiteTextStyle),
-                    TextSpan(text: loc.about.amsd, style: _blueTextStyle),
-                    TextSpan(text: loc.about.in_2020, style: _whiteTextStyle),
-                    TextSpan(text: loc.about.finalist, style: _blueTextStyle),
+                        text: loc.about!.and_accredited, style: _whiteTextStyle),
+                    TextSpan(text: loc.about!.amsd, style: _blueTextStyle),
+                    TextSpan(text: loc.about!.in_2020, style: _whiteTextStyle),
+                    TextSpan(text: loc.about!.finalist, style: _blueTextStyle),
                     TextSpan(
-                        text: loc.about.with_project, style: _whiteTextStyle),
+                        text: loc.about!.with_project, style: _whiteTextStyle),
                     TextSpan(
-                        text: loc.about.aider_mobile_application,
+                        text: loc.about!.aider_mobile_application,
                         style: _blueTextStyle),
                   ]),
             ),
@@ -210,33 +210,33 @@ class AchivementsRow extends StatelessWidget {
             descWidget: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
-                  text: loc.about.international_invention,
+                  text: loc.about!.international_invention,
                   style: _whiteTextStyle,
                   children: [
-                    TextSpan(text: loc.about.interg, style: _blueTextStyle),
+                    TextSpan(text: loc.about!.interg, style: _blueTextStyle),
                     TextSpan(
-                        text: loc.about.main_honorary, style: _whiteTextStyle),
-                    TextSpan(text: loc.about.ministry, style: _blueTextStyle),
+                        text: loc.about!.main_honorary, style: _whiteTextStyle),
+                    TextSpan(text: loc.about!.ministry, style: _blueTextStyle),
                     TextSpan(
-                        text: loc.about.in_2020_intarg, style: _whiteTextStyle),
+                        text: loc.about!.in_2020_intarg, style: _whiteTextStyle),
                     TextSpan(
-                        text: loc.about.bronze_medal, style: _blueTextStyle),
+                        text: loc.about!.bronze_medal, style: _blueTextStyle),
                     TextSpan(
-                        text: loc.about.for_the_project,
+                        text: loc.about!.for_the_project,
                         style: _whiteTextStyle),
                     TextSpan(
-                        text: loc.about.aider_mobile_application,
+                        text: loc.about!.aider_mobile_application,
                         style: _blueTextStyle),
                     TextSpan(
-                        text: loc.about.special_distinction,
+                        text: loc.about!.special_distinction,
                         style: _whiteTextStyle),
                     TextSpan(
-                        text: loc.about.young_inventor, style: _blueTextStyle),
+                        text: loc.about!.young_inventor, style: _blueTextStyle),
                     TextSpan(
-                        text: loc.about.for_the_project,
+                        text: loc.about!.for_the_project,
                         style: _whiteTextStyle),
                     TextSpan(
-                        text: loc.about.aider_mobile_application,
+                        text: loc.about!.aider_mobile_application,
                         style: _blueTextStyle),
                   ]),
             ),
@@ -246,16 +246,16 @@ class AchivementsRow extends StatelessWidget {
             descWidget: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
-                  text: loc.about.google,
+                  text: loc.about!.google,
                   style: _whiteTextStyle,
                   children: [
                     TextSpan(
-                        text: loc.about.tech_mentoring, style: _blueTextStyle),
-                    TextSpan(text: loc.about.program, style: _whiteTextStyle),
+                        text: loc.about!.tech_mentoring, style: _blueTextStyle),
+                    TextSpan(text: loc.about!.program, style: _whiteTextStyle),
                     TextSpan(
-                        text: loc.about.programmer_skills,
+                        text: loc.about!.programmer_skills,
                         style: _blueTextStyle),
-                    TextSpan(text: loc.about.under, style: _whiteTextStyle),
+                    TextSpan(text: loc.about!.under, style: _whiteTextStyle),
                   ]),
             ),
           ),
@@ -269,9 +269,9 @@ class _AchivmentTile extends StatelessWidget {
   final ImageProvider image;
   final Widget descWidget;
   const _AchivmentTile({
-    Key key,
-    @required this.image,
-    @required this.descWidget,
+    Key? key,
+    required this.image,
+    required this.descWidget,
   }) : super(key: key);
 
   @override
@@ -300,25 +300,25 @@ class _AchivmentTile extends StatelessWidget {
 
 class _ScrollIndicator extends StatelessWidget {
   const _ScrollIndicator({
-    Key key,
-    @required this.technicalSkillsKey,
+    Key? key,
+    required this.technicalSkillsKey,
     this.marginBottom,
   }) : super(key: key);
 
   final GlobalKey<State<StatefulWidget>> technicalSkillsKey;
-  final double marginBottom;
+  final double? marginBottom;
   @override
   Widget build(BuildContext context) {
     return PlayAnimation(
       delay: Duration(milliseconds: 1300),
       tween: Tween(begin: 0.0, end: 1.0),
-      builder: (context, child, value) => Opacity(
+      builder: (context, child, dynamic value) => Opacity(
         opacity: value,
         child: child,
       ),
       child: Container(
         alignment: Alignment.bottomCenter,
-        margin: EdgeInsets.only(bottom: marginBottom),
+        margin: EdgeInsets.only(bottom: marginBottom!),
         child: Transform(
           alignment: Alignment.center,
           transform: Matrix4.rotationZ(math.pi * 0.5),
@@ -328,7 +328,7 @@ class _ScrollIndicator extends StatelessWidget {
               cursor: SystemMouseCursors.click,
               child: GestureDetector(
                 onTap: () => Scrollable.ensureVisible(
-                    technicalSkillsKey.currentContext,
+                    technicalSkillsKey.currentContext!,
                     curve: Curves.easeInOutSine,
                     duration: Duration(milliseconds: 600)),
                 child: LottieBuilder.asset(
@@ -346,8 +346,8 @@ class _ScrollIndicator extends StatelessWidget {
 
 class _PersonalDesc extends StatelessWidget {
   const _PersonalDesc({
-    Key key,
-    @required this.loc,
+    Key? key,
+    required this.loc,
   }) : super(key: key);
 
   final LocaleBase loc;
@@ -361,14 +361,14 @@ class _PersonalDesc extends StatelessWidget {
       child: PlayAnimation(
         tween: Tween(begin: 0.0, end: 1.0),
         curve: Curves.easeInOutSine,
-        builder: (context, child, value) =>
+        builder: (context, child, dynamic value) =>
             Opacity(opacity: value, child: child),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Text(
-              loc.about.desc_title,
+              loc.about!.desc_title!,
               style: TextStyle(
                   color: PortfolioColors.white,
                   fontWeight: FontWeight.bold,
@@ -379,7 +379,7 @@ class _PersonalDesc extends StatelessWidget {
               height: 36.h,
             ),
             Text(
-              loc.about.desc,
+              loc.about!.desc!,
               textAlign: TextAlign.start,
               style:
                   TextStyle(color: PortfolioColors.lightBlue, fontSize: 16.sp),
@@ -391,7 +391,7 @@ class _PersonalDesc extends StatelessWidget {
               onPressed: () {
                 log("resume");
               },
-              text: loc.about.my_resume,
+              text: loc.about!.my_resume,
               textSize: 16.sp,
             )
           ],
@@ -403,8 +403,8 @@ class _PersonalDesc extends StatelessWidget {
 
 class _PersonalInfo extends StatelessWidget {
   const _PersonalInfo({
-    Key key,
-    @required this.loc,
+    Key? key,
+    required this.loc,
   }) : super(key: key);
 
   final LocaleBase loc;
@@ -417,13 +417,13 @@ class _PersonalInfo extends StatelessWidget {
         child: PlayAnimation(
           tween: Tween(begin: 0.0, end: 1.0),
           curve: Curves.easeInOutSine,
-          builder: (context, child, value) =>
+          builder: (context, child, dynamic value) =>
               Opacity(opacity: value, child: child),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                loc.about.about_me,
+                loc.about!.about_me!,
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 56.sp,
@@ -440,7 +440,7 @@ class _PersonalInfo extends StatelessWidget {
                 height: 41.h,
               ),
               Text(
-                loc.about.szymon_stasik,
+                loc.about!.szymon_stasik!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: PortfolioColors.lightBlue,
@@ -459,7 +459,7 @@ class _PersonalInfo extends StatelessWidget {
 
 class _Background extends StatelessWidget {
   const _Background({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -478,7 +478,7 @@ class _Background extends StatelessWidget {
 
 class _BottomWave extends StatelessWidget {
   const _BottomWave({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -503,7 +503,7 @@ class _BottomWave extends StatelessWidget {
 
 class _UpperWave extends StatelessWidget {
   const _UpperWave({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

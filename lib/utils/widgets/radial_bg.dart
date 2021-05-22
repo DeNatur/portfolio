@@ -5,7 +5,7 @@ import '../statics/colors.dart';
 
 class RadialBg extends StatelessWidget {
   const RadialBg({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

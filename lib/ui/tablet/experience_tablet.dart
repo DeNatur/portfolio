@@ -42,11 +42,11 @@ class ExperiencePageTablet extends StatelessWidget {
 
 class List extends StatelessWidget {
   const List({
-    Key key,
-    @required this.loc,
+    Key? key,
+    required this.loc,
   }) : super(key: key);
 
-  final LocaleBase loc;
+  final LocaleBase? loc;
 
   @override
   Widget build(BuildContext context) {
@@ -67,8 +67,8 @@ class List extends StatelessWidget {
                 color1: PortfolioColors.android,
                 color2: PortfolioColors.android,
                 image: AssetImage(ASSET_AIDER),
-                title: loc.experience.aider,
-                desc: loc.experience.aider_desc,
+                title: loc!.experience!.aider,
+                desc: loc!.experience!.aider_desc,
                 onPress: () => html.window.open(
                     "https://play.google.com/store/apps/details?id=com.aider",
                     "aider"),
@@ -77,43 +77,43 @@ class List extends StatelessWidget {
                   color1: PortfolioColors.android,
                   color2: PortfolioColors.android,
                   image: AssetImage(ASSET_FINDAIR),
-                  title: loc.experience.findair,
-                  desc: loc.experience.findair_desc,
+                  title: loc!.experience!.findair,
+                  desc: loc!.experience!.findair_desc,
                   onPress: () => showProjectDialog(
                       context,
-                      loc.experience.findair,
-                      loc.experience.findair1,
-                      loc.experience.findair2,
+                      loc!.experience!.findair,
+                      loc!.experience!.findair1,
+                      loc!.experience!.findair2,
                       "https://findair.eu/products/findair-app.html")),
               CardDesktop(
                   color1: PortfolioColors.flutter,
                   color2: PortfolioColors.android,
                   image: AssetImage(ASSET_FINDAIR_RESEARCH),
                   title: "",
-                  desc: loc.experience.findair_research_desc,
+                  desc: loc!.experience!.findair_research_desc,
                   onPress: () => showProjectDialog(
                       context,
-                      loc.experience.findair_research,
-                      loc.experience.findair_r1,
-                      loc.experience.findair_r2,
+                      loc!.experience!.findair_research,
+                      loc!.experience!.findair_r1,
+                      loc!.experience!.findair_r2,
                       "https://findair.eu/products/findair-research-app.html")),
               CardDesktop(
                   color1: PortfolioColors.flutter,
                   color2: PortfolioColors.flutter,
                   image: AssetImage(ASSET_SANITY),
                   title: "",
-                  desc: loc.experience.findair_research_desc,
+                  desc: loc!.experience!.findair_research_desc,
                   onPress: () => showProjectDialog(
                       context,
-                      loc.experience.sanity,
+                      loc!.experience!.sanity,
                       "",
-                      loc.experience.sanity1,
+                      loc!.experience!.sanity1,
                       "https://findair.eu/resources/case-studies/sanity/")),
               CardDesktop(
                 color1: PortfolioColors.flutter,
                 color2: PortfolioColors.flutter,
                 image: AssetImage(ASSET_BMI),
-                title: loc.experience.bmi_diary,
+                title: loc!.experience!.bmi_diary,
                 desc: "BMI calcualtor and Diary made In Flutter",
                 onPress: () => html.window
                     .open("https://github.com/DeNatur/bmi_diary", "github"),
@@ -155,11 +155,11 @@ class List extends StatelessWidget {
 
 class _Title extends StatelessWidget {
   const _Title({
-    Key key,
-    @required this.loc,
+    Key? key,
+    required this.loc,
   }) : super(key: key);
 
-  final LocaleBase loc;
+  final LocaleBase? loc;
 
   @override
   Widget build(BuildContext context) {
@@ -169,7 +169,7 @@ class _Title extends StatelessWidget {
         top: 160.h,
       ),
       child: Text(
-        loc.experience.experience,
+        loc!.experience!.experience!,
         textAlign: TextAlign.center,
         style: TextStyle(
             fontWeight: FontWeight.bold,
@@ -182,7 +182,7 @@ class _Title extends StatelessWidget {
 
 class _Legend extends StatelessWidget {
   const _Legend({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -258,7 +258,7 @@ class _Legend extends StatelessWidget {
 
 class _UpperWave extends StatelessWidget {
   const _UpperWave({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

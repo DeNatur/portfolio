@@ -6,7 +6,7 @@ import 'dart:html' as html;
 class IconContactRow extends StatelessWidget {
   final AlignmentGeometry alignment;
   const IconContactRow({
-    Key key,
+    Key? key,
     this.alignment = Alignment.topRight,
   }) : super(key: key);
 

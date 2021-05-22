@@ -17,7 +17,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
+    WidgetsBinding.instance!.addPostFrameCallback((_) async {
       await CacheService(context).preCacheImagesAndAnimations();
       context.read(navigationProvider).navigateToAndReplaceUntil(MainViewRoute);
     });

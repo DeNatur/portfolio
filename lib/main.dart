@@ -21,7 +21,7 @@ void main() {
 
 class MainApp extends HookWidget {
   MainApp({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -31,13 +31,13 @@ class MainApp extends HookWidget {
       DeviceOrientation.portraitDown,
     ]);
 
-    if (useProvider(firebaseService).error) {
-      return MaterialApp(home: Scaffold(body: Text("Something went wrong")));
-    }
+    // if (useProvider(firebaseService).error) {
+    //   return MaterialApp(home: Scaffold(body: Text("Something went wrong")));
+    // }
 
-    if (!useProvider(firebaseService).initialized) {
-      return MaterialApp(home: Scaffold(body: LoadingPage()));
-    }
+    // if (!useProvider(firebaseService).initialized) {
+    //   return MaterialApp(home: Scaffold(body: LoadingPage()));
+    // }
 
     return MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -23,25 +23,25 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   }
 }
 
-PageRoute _getMaterialPageRoute({String routeName, Widget viewToShow}) {
+PageRoute _getMaterialPageRoute({String? routeName, Widget? viewToShow}) {
   return MaterialPageRoute(
       settings: RouteSettings(
         name: routeName,
       ),
-      builder: (_) => viewToShow);
+      builder: (_) => viewToShow!);
 }
 
-PageRoute _getPageRoute({String routeName, Widget viewToShow}) {
+PageRoute _getPageRoute({String? routeName, Widget? viewToShow}) {
   return CupertinoPageRoute(
       settings: RouteSettings(
         name: routeName,
       ),
-      builder: (_) => viewToShow);
+      builder: (_) => viewToShow!);
 }
 
 PageRoute _getPageRouteWithArgs(
-    {String routeName, Widget viewToShow, dynamic arguments}) {
+    {String? routeName, Widget? viewToShow, dynamic arguments}) {
   return MaterialPageRoute(
       settings: RouteSettings(name: routeName, arguments: arguments),
-      builder: (_) => viewToShow);
+      builder: (_) => viewToShow!);
 }

@@ -3,11 +3,11 @@ import 'package:portfolio/utils/statics/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AboutSectionTitleMobile extends StatelessWidget {
-  final String sectionTitle;
-  final String section;
+  final String? sectionTitle;
+  final String? section;
 
   const AboutSectionTitleMobile(
-      {Key key, @required this.sectionTitle, @required this.section})
+      {Key? key, required this.sectionTitle, required this.section})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class AboutSectionTitleMobile extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Text(
-            sectionTitle,
+            sectionTitle!,
             style: TextStyle(
               color: PortfolioColors.ultraLightBlue,
               fontSize: 14.sp,
@@ -28,7 +28,7 @@ class AboutSectionTitleMobile extends StatelessWidget {
             height: 16.h,
           ),
           Text(
-            section,
+            section!,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16.sp,
@@ -51,11 +51,11 @@ class AboutSectionTitleMobile extends StatelessWidget {
 }
 
 class AboutSectionTitleDesktop extends StatelessWidget {
-  final String sectionTitle;
-  final String section;
+  final String? sectionTitle;
+  final String? section;
 
   const AboutSectionTitleDesktop(
-      {Key key, @required this.sectionTitle, @required this.section})
+      {Key? key, required this.sectionTitle, required this.section})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class AboutSectionTitleDesktop extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Text(
-            sectionTitle,
+            sectionTitle!,
             style: TextStyle(
               color: PortfolioColors.ultraLightBlue,
               fontSize: 24.sp,
@@ -76,7 +76,7 @@ class AboutSectionTitleDesktop extends StatelessWidget {
             height: 33.h,
           ),
           Text(
-            section,
+            section!,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 36.sp,

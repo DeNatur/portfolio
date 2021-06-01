@@ -5,12 +5,26 @@ import 'package:flutter/material.dart';
 extension HoverExtensions on Widget {
   // Get a regerence to the body of the view
   Widget get moveUpOnHover {
-    return Platform.isAndroid || Platform.isIOS
+    return isWeb()
         ? this
         : TranslateOnHover(
             child: this,
           );
   }
+}
+
+bool isWeb() {
+  bool web = false;
+  try {
+    if (Platform.isAndroid || Platform.isIOS) {
+      web = false;
+    } else {
+      web = true;
+    }
+  } catch (e) {
+    web = true;
+  }
+  return web;
 }
 
 class TranslateOnHover extends StatefulWidget {

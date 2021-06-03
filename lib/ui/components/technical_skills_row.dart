@@ -21,20 +21,20 @@ class TechnicalSkillsRow extends StatelessWidget {
         children: [
           TechnicalSkill(
               image: AssetImage(ASSET_FIREBASE),
-              title: loc.about!.backend,
-              desc: loc.about!.backend_desc),
+              title: loc.about.backend,
+              desc: loc.about.backend_desc),
           TechnicalSkill(
               image: AssetImage(ASSET_FLUTTER),
-              title: loc.about!.flutter,
-              desc: loc.about!.flutter_desc),
+              title: loc.about.flutter,
+              desc: loc.about.flutter_desc),
           TechnicalSkill(
               image: AssetImage(ASSET_ANRDOID),
-              title: loc.about!.android,
-              desc: loc.about!.android_desc),
+              title: loc.about.android,
+              desc: loc.about.android_desc),
           TechnicalSkill(
               image: AssetImage(ASSET_FIGMA),
-              title: loc.about!.other,
-              desc: loc.about!.other_desc),
+              title: loc.about.other,
+              desc: loc.about.other_desc),
         ],
       ),
     );

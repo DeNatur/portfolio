@@ -53,7 +53,7 @@ class MainPageDrawer extends HookWidget {
                 ),
                 _DrawerTile(
                   onPressed: () => model.changePage(PortfolioPage.Home),
-                  text: loc.main!.home,
+                  text: loc.main.home,
                   currentPage: currentPage == PortfolioPage.Home,
                 ),
                 SizedBox(
@@ -61,7 +61,7 @@ class MainPageDrawer extends HookWidget {
                 ),
                 _DrawerTile(
                   onPressed: () => model.changePage(PortfolioPage.About),
-                  text: loc.main!.about,
+                  text: loc.main.about,
                   currentPage: currentPage == PortfolioPage.About,
                 ),
                 SizedBox(
@@ -69,7 +69,7 @@ class MainPageDrawer extends HookWidget {
                 ),
                 _DrawerTile(
                   onPressed: () => model.changePage(PortfolioPage.Experience),
-                  text: loc.main!.experience,
+                  text: loc.main.experience,
                   currentPage: currentPage == PortfolioPage.Experience,
                 ),
                 SizedBox(
@@ -77,7 +77,7 @@ class MainPageDrawer extends HookWidget {
                 ),
                 _DrawerTile(
                   onPressed: () => model.changePage(PortfolioPage.Contact),
-                  text: loc.main!.contact,
+                  text: loc.main.contact,
                   currentPage: currentPage == PortfolioPage.Contact,
                 ),
               ],

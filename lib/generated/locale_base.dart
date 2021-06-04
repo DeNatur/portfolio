@@ -193,6 +193,12 @@ class Localecontact {
     return _data[key]!;
   }
 
-  
+  String get contact_me => _data["contact_me"]!;
+  String get contact_information => _data["contact_information"]!;
+  String get contact_information_sub => _data["contact_information_sub"]!;
+  String get contact_form => _data["contact_form"]!;
+  String get your_name => _data["your_name"]!;
+  String get e_mail => _data["e_mail"]!;
+  String get message => _data["message"]!;
 }
 

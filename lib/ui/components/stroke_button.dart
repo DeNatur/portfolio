@@ -37,7 +37,7 @@ class StrokeButton extends StatelessWidget {
                 style: TextStyle(
                     fontSize: textSize,
                     fontWeight: FontWeight.bold,
-                    color: PortfolioColors.ultraLightBlue),
+                    color: color),
               ),
             ),
             onPressed: onPressed as void Function()?,

@@ -66,7 +66,28 @@
     "program": "Program\n\nIn 2020 for 4 month improved\n",
     "programmer_skills": "programmer skills ",
     "under": "under Tech Mentor\nfrom Google",
-    "see_my_project": "See my projects"
+    "see_my_project": "See my projects",
+    "sep_2018": "Sep 2018",
+    "oct_2018": "Oct 2018",
+    "jan_2019": "Jan 2019",
+    "may_2019": "May 2019",
+    "aug_2019": "Aug 2019",
+    "apr_2020": "Apr 2020",
+    "apr_2020_cdn": "Apr 2020 cdn.",
+    "jun_2020": "Jun 2020",
+    "jul_2020": "Jul 2020",
+    "mar_2021": "Mar 2021",
+    "agh_drone": "Start of AGH Drone\nEngineering\nScience Club",
+    "accreditation_to_intel_isef": "Accreditation to\nIntel ISEF in USA\nwith project “AMSD -\nRescue drone”",
+    "lecture_about_programming": "Lecture about programming\nrobots",
+    "intel_isef": "Intel ISEF in USA - World’s\nlargest international\ncompetition for young\nscientists - 3rd place award",
+    "start_findair": "Start work at FindAir as\nAndroid Developer\nmantaining and creating\nnew features for FindAir app",
+    "aider_app": "Release of Aider Application\n\nSide Project helping people\nunable to do daily activities ",
+    "aider_success": "Small success of Aider -\napplication appers in public media",
+    "intarg": "Aider wins Bronze Medal\nat International Invention and Innovation Show",
+    "google_mentorship": "Start of 4 month\nProgramming Tech Mentorship\nat Google",
+    "cardjola": "Project written in Flutter\nat FindAir - “Sanity Cardjola”",
+    "findair_research": "Project written in Flutter\nat FindAir - “FindAir Research”"
   },
   "experience": {
     "experience": "Experience",
@@ -94,5 +115,13 @@
     "sanity": "FindAir & Sanity\ncooperation app",
     "sanity1": " As an Android Developer at “FindAir I have been working\nin Flutter at Mobile app implementing Bluetooth\ntechnology into Sanity’s medical devices"
   },
-  "contact": {}
+  "contact": {
+    "contact_me": "Contact me",
+    "contact_information": "Contact information",
+    "contact_information_sub": "Fill up the form or contact me directly through informations provided below",
+    "contact_form": "Contact Form",
+    "your_name": "Your name",
+    "e_mail": "E-mail",
+    "message": "Message"
+  }
 }

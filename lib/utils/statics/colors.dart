@@ -16,4 +16,7 @@ class PortfolioColors {
   static const technicalSkillDesc = const Color(0xff367198);
   static const android = const Color(0xff3DDC84);
   static const flutter = const Color(0xff2E5F7A);
+  static const infoBg = const Color(0xff1B273C);
+  static const formBg = const Color(0xff294D6B);
+  static const formMessageBg = const Color(0xff26455F);
 }

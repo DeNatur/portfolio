@@ -412,16 +412,31 @@ class _PersonalDesc extends StatelessWidget {
             SizedBox(
               height: 55.h,
             ),
-            StrokeButton(
-              onPressed: () {
-                log("resume");
-              },
-              text: loc.about.my_resume,
-              textSize: 16.sp,
-            )
+            _ResumeButton(loc: loc)
           ],
         ),
       ),
+    );
+  }
+}
+
+class _ResumeButton extends HookWidget {
+  const _ResumeButton({
+    Key? key,
+    required this.loc,
+  }) : super(key: key);
+
+  final LocaleBase loc;
+
+  @override
+  Widget build(BuildContext context) {
+    final model = useProvider(mainViewModel);
+    return StrokeButton(
+      onPressed: () {
+        model.seeResume();
+      },
+      text: loc.about.my_resume,
+      textSize: 16.sp,
     );
   }
 }

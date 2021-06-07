@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/buisness_logic/utils/utils.dart';
 import 'package:portfolio/buisness_logic/utils/view_model.dart';
+import 'package:portfolio/services/cloud_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/services.dart';
@@ -39,7 +41,11 @@ class MainViewModel extends ViewModel {
   }
 
   void goToLinkedIn() {
-    launch("https://www.linkedin.com/in/szymonstasik/");
+    launch("https://www.linkedin.com/in/sstasik/");
+  }
+
+  void goToFaceBook() {
+    launch("https://www.linkedin.com/in/sstasik/");
   }
 
   void goToGithub() {
@@ -58,8 +64,97 @@ class MainViewModel extends ViewModel {
         fontSize: 16.0);
   }
 
-  void sendMessage() {
-    //TODO implement send message
+  void sendMessage() async {
+    if (busy) return;
+    setBusy(true);
+    String email = emailTEC.text;
+    String name = nameTEC.text;
+    String message = messageTEC.text;
+    if (!_validateInputs(email, name, message)) {
+      setBusy(false);
+      return;
+    }
+    bool result = await CloudService.sendEmail(email, name, message);
+    setBusy(false);
+
+    _showMessageResults(result);
+  }
+
+  void _showMessageResults(bool result) {
+    if (result) {
+      Fluttertoast.showToast(
+          msg: "Message was sent successfully!",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.black.withOpacity(0.4),
+          textColor: Colors.white,
+          fontSize: 16.0);
+      nameTEC.text = "";
+      emailTEC.text = "";
+      messageTEC.text = "";
+      return;
+    }
+    Fluttertoast.showToast(
+        msg: "Something went wrong with sending message!",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.black.withOpacity(0.4),
+        textColor: Colors.white,
+        fontSize: 16.0);
+  }
+
+  bool _validateInputs(String email, String name, String message) {
+    if (!_validateMail(email)) return false;
+    if (!_validateName(name)) return false;
+    if (!_validateMessage(message)) return false;
+    return true;
+  }
+
+  bool _validateMessage(String message) {
+    if (message.isEmpty) {
+      Fluttertoast.showToast(
+          msg: "Message cannot be empty!",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.black.withOpacity(0.4),
+          textColor: Colors.white,
+          fontSize: 16.0);
+      return false;
+    }
+    return true;
+  }
+
+  bool _validateName(String name) {
+    if (name.isEmpty) {
+      Fluttertoast.showToast(
+          msg: "Name cannot be empty!",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.black.withOpacity(0.4),
+          textColor: Colors.white,
+          fontSize: 16.0);
+      return false;
+    }
+    return true;
+  }
+
+  bool _validateMail(String email) {
+    if (email.isEmpty || !Utils.validateMail(email)) {
+      Fluttertoast.showToast(
+          msg: "Wrong Email!",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.black.withOpacity(0.4),
+          textColor: Colors.white,
+          fontSize: 16.0);
+      return false;
+    }
+    return true;
   }
 
   void seeResume() {

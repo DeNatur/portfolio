@@ -10,6 +10,7 @@ class StrokeButton extends StatelessWidget {
   final Function onPressed;
   final String? text;
   final double textSize;
+  final bool busy;
   final Color color;
   final EdgeInsetsGeometry margin;
 
@@ -19,7 +20,8 @@ class StrokeButton extends StatelessWidget {
       required this.text,
       this.color = PortfolioColors.ultraLightBlue,
       this.margin = EdgeInsets.zero,
-      this.textSize = 16})
+      this.textSize = 16,
+      this.busy = false})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -31,15 +33,24 @@ class StrokeButton extends StatelessWidget {
         children: [
           MaterialButton(
             padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-            child: Center(
-              child: Text(
-                text!,
-                style: TextStyle(
-                    fontSize: textSize,
-                    fontWeight: FontWeight.bold,
-                    color: color),
-              ),
-            ),
+            child: busy
+                ? Center(
+                    child: Container(
+                    height: textSize,
+                    width: textSize,
+                    child: CircularProgressIndicator(
+                        strokeWidth: 2.0,
+                        valueColor: AlwaysStoppedAnimation<Color>(color)),
+                  ))
+                : Center(
+                    child: Text(
+                      text!,
+                      style: TextStyle(
+                          fontSize: textSize,
+                          fontWeight: FontWeight.bold,
+                          color: color),
+                    ),
+                  ),
             onPressed: onPressed as void Function()?,
           ),
         ],

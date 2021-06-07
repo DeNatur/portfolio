@@ -185,6 +185,7 @@ class _RightContact extends HookWidget {
               height: 16.h,
             ),
             StrokeButton(
+              busy: model.busy,
               color: PortfolioColors.white,
               onPressed: () {
                 model.sendMessage();
